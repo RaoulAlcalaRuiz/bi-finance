@@ -48,6 +48,18 @@ class yearlyGoal(models.Model):
           for record in self:
                record.name = record.year
 
+     def _get_all_employee(self):
+          list_commercial = []
+          for r in self:
+               if 0 == len(r.monthly_goal_ids):
+                    return list_commercial
+               else :
+                    for monthly_record in r.monthly_goal_ids:
+                         if 0 != len(monthly_record.monthly_goal_employee_ids):
+                              for employee in monthly_record.monthly_goal_employee_ids :
+                                   list_commercial.append(employee.commercial_id)
+          return list_commercial
+
 class monthlyGoal(models.Model):
      _name = 'bi_finance.monthly_goal'
      _description = 'Objectif Mensuel'
@@ -138,14 +150,18 @@ class ReportGoal(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        test = self.env.cr.execute("select COUNT(*) from sale_order")
-
+        docs =self.env['bi_finance.yearly_goal'].browse(docids)
+        commercial_id = docs._get_all_employee()
+        # sale_order = self.env['sale_order'].browse(docids)
+        # test = self.env.cr.execute("select sale_order_id,amount_untaxed,date_order, state, user_id "+
+        #                            "from sale_order"+
+        #                            "where date_order between '"+docs[0].year+"-01-01' and '"+docs[0].year+"-12-31'")
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('bi_finance.report_ca_template')
         docargs = {
             'doc_ids': docids,
             'doc_model': 'bi_finance.yearly_goal',
-            'docs': self.env['bi_finance.yearly_goal'].browse(docids),
-            'data_test': 'data_test =D'
+            'docs': docs,
+            'data_test': commercial_id
         }
         return docargs

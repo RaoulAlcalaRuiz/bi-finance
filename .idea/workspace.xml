@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../openacademy/static/src/js/Chart.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../openacademy/static/src/src/Chart.min.css" afterDir="false" />
+    <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="Report =&gt; Show it, custom method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +44,10 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Report =&gt; Show it, custom method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Report =&gt; Show it, custom method" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581520394540">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -56,5 +61,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581596153126" />
+    <state x="1177" y="0" width="750" height="1047" key="dock-window-1" timestamp="1582041189487">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1177" y="0" width="750" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1582041189487" />
   </component>
 </project>
