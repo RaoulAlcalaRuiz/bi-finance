@@ -1,0 +1,96 @@
+<odoo>
+        <!--==========View and Action objectif annuel===========-->
+    <record model="ir.actions.act_window" id="yearly_goal_list_action">
+        <field name="name">Objectif annuel</field>
+        <field name="res_model">bi_finance.yearly_goal</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Créez votre premier objectif annuel.
+            </p>
+        </field>
+    </record>
+
+    <!--Tree view objectif annuel-->
+    <record model="ir.ui.view" id="year_goal_ca_tree_view">
+        <field name="name">bi_finance.yearly_goal.tree</field>
+        <field name="model">bi_finance.yearly_goal</field>
+        <field name="arch" type="xml">
+            <tree string="Objectif annuel Tree">
+                <field name="name"/>
+                <field name="year"/>
+                <field name="goal"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--View Kaban objectif annuel-->
+    <record model="ir.ui.view" id="view_yearly_goal_kanban">
+            <field name="name">bi_finance.yearly_goal.kanban</field>
+            <field name="model">bi_finance.yearly_goal</field>
+            <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div>
+                            <div t-attf-class="oe_kanban_content">
+                                <!-- title -->
+                                Année :
+                                <field name="name"/>
+                                <br/>
+                                Objectif :
+                                <field name="goal"/> €
+                                <br/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Search objectif annuel -->
+    <record model="ir.ui.view" id="yearly_goal_search_view">
+        <field name="name">bi_finance.yearly_goal.search</field>
+        <field name="model">bi_finance.yearly_goal</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Formulaire d'ajout ou de modification d'un objectif annuel-->
+    <record model="ir.ui.view" id="year_goal_ca_form_view">
+        <field name="name">bi_finance.yearly_goal.form</field>
+        <field name="model">bi_finance.yearly_goal</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Objectif annuel" col="12">
+                        <group string="Info" colspan="8">
+                            <field name="description"/>
+                        </group>
+                        <group string="Objectif" colspan="4">
+                            <field name="year"/>
+                            <field name="goal"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Objectif mensuel">
+                            <field name="monthly_goal_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="month"/>
+                                    <field name="yearly_goal_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

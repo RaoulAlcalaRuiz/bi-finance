@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--==========View and Action objectif mensuel===========-->
+    <record model="ir.actions.act_window" id="monthly_goal_employee_list_action">
+        <field name="name">Objectif mensuel d'un employé</field>
+        <field name="res_model">bi_finance.monthly_goal_employee</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Créez votre premier objectif mensuel pour un employé.
+            </p>
+        </field>
+    </record>
+
+    <!--Tree view objectif mensuel-->
+    <record model="ir.ui.view" id="monthly_goal_employee_tree_view">
+        <field name="name">monthly_goal_employee.tree</field>
+        <field name="model">bi_finance.monthly_goal_employee</field>
+        <field name="arch" type="xml">
+            <tree string="Objectif mensuel Tree">
+                <field name="name"/>
+                <field name="commercial_id"/>
+                <field name="goal"/>
+                <field name="monthly_goal_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search objectif employé -->
+    <record model="ir.ui.view" id="monthly_goal_employee_search_view">
+        <field name="name">bi_finance.monthly_goal_employee.search</field>
+        <field name="model">bi_finance.monthly_goal_employee</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="commercial_id"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Formulaire d'ajout ou de modification d'un objectif mensuel-->
+    <record model="ir.ui.view" id="monthly_goal_employee_form_view">
+        <field name="name">monthly_goal_employee.form</field>
+        <field name="model">bi_finance.monthly_goal_employee</field>
+        <field name="arch" type="xml">
+            <form string="Objectif mensuel Form">
+                <sheet>
+                    <group string="Objectif mensuel d'un employé" colspan="4">
+                        <group string="Info" colspan="2" col="2">
+                            <field name="monthly_goal_id"/>
+                        </group>
+                        <group string="Employé" colspan="2" col="2">
+                            <field name="commercial_id"/>
+                            <field name="goal"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
