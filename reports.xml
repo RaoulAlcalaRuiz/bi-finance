@@ -22,12 +22,37 @@
     </template>-->
     <template id="report_ca_template">
          <t t-call="web.html_container">
+             <h2>Id year</h2>
+             <t t-esc="doc_ids"/>
+
+             <br/>
+             <h2>Months</h2>
+             <t t-foreach="months" t-as="id">
+                    <t t-esc="id.id"/>
+             </t>
+             <br/>
+             <t t-esc="months_ids"/>
+
+             <br/>
+             <h2>Employee</h2>
+             <t t-foreach="employees" t-as="employee">
+                    <t t-esc="employee.commercial_id.id"/>
+             </t>
+             <br/>
+             <t t-esc="employees_ids"/>
+
+             <br/>
+             <h2>Sale_order</h2>
+             <!--<t t-foreach="sale_oders" t-as="sale_oder">
+                    <t t-esc="sale_oder.id"/>
+             </t>-->
+             <br/>
+             <t t-esc="sale_oders"/>
+             <!--<t t-foreach="doc_ids" t-as="id">
                 <t t-call="web.basic_layout">
-                    <t t-esc="docs"/>
-                    <t t-foreach="data_test" t-as="id">
-                        <p><span t-esc="id"/></p>
-                    </t>
+                    <t t-esc="id"/>
                 </t>
+             </t>-->
          </t>
     </template>
 

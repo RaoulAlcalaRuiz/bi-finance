@@ -23,13 +23,13 @@ class yearlyGoal(models.Model):
      @api.depends('goal', 'monthly_goal_ids')
      def _goal_compute_year(self):
           for r in self:
-               if 0 == len(r.monthly_goal_ids):
-                    r.goal = 0
-               else :
+                goal = 0
+                if(0 != len(r.monthly_goal_ids)):
                     for monthly_record in r.monthly_goal_ids:
-                         if 0 != len(monthly_record.monthly_goal_employee_ids):
-                              for employee in monthly_record.monthly_goal_employee_ids :
-                                   r.goal += employee.goal
+                         if(0 != len(monthly_record.monthly_goal_employee_ids)):
+                              for employee in monthly_record.monthly_goal_employee_ids:
+                                   goal += employee.goal
+                r.goal = goal
 
      def _current_year(self):
           return str(datetime.today().year)
@@ -57,7 +57,7 @@ class yearlyGoal(models.Model):
                     for monthly_record in r.monthly_goal_ids:
                          if 0 != len(monthly_record.monthly_goal_employee_ids):
                               for employee in monthly_record.monthly_goal_employee_ids :
-                                   list_commercial.append(employee.commercial_id)
+                                   list_commercial.append(employee.commercial_id.user_id)
           return list_commercial
 
 class monthlyGoal(models.Model):
@@ -150,18 +150,66 @@ class ReportGoal(models.AbstractModel):
 
     @api.model
     def _get_report_values(self, docids, data=None):
-        docs =self.env['bi_finance.yearly_goal'].browse(docids)
-        commercial_id = docs._get_all_employee()
-        # sale_order = self.env['sale_order'].browse(docids)
-        # test = self.env.cr.execute("select sale_order_id,amount_untaxed,date_order, state, user_id "+
-        #                            "from sale_order"+
-        #                            "where date_order between '"+docs[0].year+"-01-01' and '"+docs[0].year+"-12-31'")
+        yearly_goal = self.env['bi_finance.yearly_goal'].browse(docids)
+        months = self._get_months(docids)
+        months_ids = self._get_month_ids(months)
+
+        employees = self._get_employees(months_ids)
+        employees_ids = self._get_employees_ids(employees)
+
+        sale_oders = self._get_sale_oders(employees_ids,yearly_goal.year)
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('bi_finance.report_ca_template')
+
         docargs = {
             'doc_ids': docids,
-            'doc_model': 'bi_finance.yearly_goal',
-            'docs': docs,
-            'data_test': commercial_id
+            'months': months,
+            'months_ids': months_ids,
+            'employees': employees,
+            'employees_ids': employees_ids,
+            'sale_oders': sale_oders,
+            'doc_model': 'bi_finance.yearly_goal'
         }
         return docargs
+
+    def _get_months(self,yearly_goal_id):
+        environementMonth = self.env['bi_finance.monthly_goal']
+        return environementMonth.search([('yearly_goal_id.id','=',yearly_goal_id)])
+        months_ids = self._get_id(months)
+
+    def _get_month_ids(self,list):
+        array = []
+        for r in list:
+            array.append(r.id)
+        return array
+
+    def _get_employees(self,months_ids):
+        environementEmployee = self.env['bi_finance.monthly_goal_employee']
+        return environementEmployee.search([('monthly_goal_id','=',months_ids)])
+
+    def _get_employees_ids(self,list):
+        array = []
+        for r in list:
+            array.append(r.commercial_id.id)
+        return array
+
+    def _get_employees_ids_str(self,employees_ids):
+        string_return = "("
+        index = 0
+        len_id = len(employees_ids)
+        for r in employees_ids:
+            index += 1
+            if len_id != index:
+                string_return += "{id},".format(id=str(r))
+            else:
+                string_return += "{id}".format(id=str(r))
+        string_return +=")"
+        return string_return
+
+    def _get_sale_oders(self,employees_ids,year_goal):
+        request =("select s.id, s.amount_untaxed, s.date_order, s.state, s.user_id "+
+                  "From sale_order s "+
+                  "WHERE s.user_id in "+ self._get_employees_ids_str(employees_ids)+" "+" AND "+
+                  "TO_CHAR(s.date_order,'YYYY') = '"+year_goal+"'")
+        self.env.cr.execute(request)
+        return self.env.cr.fetchall()
