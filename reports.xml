@@ -42,17 +42,12 @@
              <t t-esc="employees_ids"/>
 
              <br/>
-             <h2>Sale_order</h2>
-             <!--<t t-foreach="sale_oders" t-as="sale_oder">
-                    <t t-esc="sale_oder.id"/>
-             </t>-->
+             <h2>Real sales</h2>
+             <t t-esc="real_annual_sales"/>
+
              <br/>
-             <t t-esc="sale_oders"/>
-             <!--<t t-foreach="doc_ids" t-as="id">
-                <t t-call="web.basic_layout">
-                    <t t-esc="id"/>
-                </t>
-             </t>-->
+             <h2>Goal Sales</h2>
+             <t t-esc="goal_annual_sales"/>
          </t>
     </template>
 

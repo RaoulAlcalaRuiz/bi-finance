@@ -157,7 +157,9 @@ class ReportGoal(models.AbstractModel):
         employees = self._get_employees(months_ids)
         employees_ids = self._get_employees_ids(employees)
 
-        sale_oders = self._get_sale_oders(employees_ids,yearly_goal.year)
+        real_annual_sales = self._compute_annual_sales(yearly_goal.year)
+        goal_annual_sales = self._compute_goal_annual_sales(yearly_goal.year)
+
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('bi_finance.report_ca_template')
 
@@ -167,7 +169,8 @@ class ReportGoal(models.AbstractModel):
             'months_ids': months_ids,
             'employees': employees,
             'employees_ids': employees_ids,
-            'sale_oders': sale_oders,
+            'real_annual_sales': real_annual_sales,
+            'goal_annual_sales': goal_annual_sales,
             'doc_model': 'bi_finance.yearly_goal'
         }
         return docargs
@@ -206,10 +209,34 @@ class ReportGoal(models.AbstractModel):
         string_return +=")"
         return string_return
 
-    def _get_sale_oders(self,employees_ids,year_goal):
-        request =("select s.id, s.amount_untaxed, s.date_order, s.state, s.user_id "+
+    def _get_sale_oders(self,year_goal,month_goal):
+        request =("select SUM(s.amount_untaxed), TO_CHAR(s.date_order, 'YYYY') AS Year, "+
+                  "TO_CHAR(s.date_order, 'MM') AS Month "+
                   "From sale_order s "+
-                  "WHERE s.user_id in "+ self._get_employees_ids_str(employees_ids)+" "+" AND "+
-                  "TO_CHAR(s.date_order,'YYYY') = '"+year_goal+"'")
+                  "WHERE TO_CHAR(s.date_order, 'YYYY MM') = '"+year_goal+" "+month_goal+"'"
+                  "AND s.state = 'sale' "
+                  "GROUP BY Year,Month ")
+        self.env.cr.execute(request)
+        return self.env.cr.fetchall()
+
+    def _compute_annual_sales(self,year):
+        real_annual_sales = []
+        for i in range(1,13):
+            real_annual_sales.append(self._get_sale_oders(year,"{:02d}".format(i)))
+        return real_annual_sales
+
+    def _compute_goal_annual_sales(self,year):
+        goal_annual_sales = []
+        for i in range(1,13):
+            goal_annual_sales.append(self._get_goal_sale_oders(year,str(i)))
+        return goal_annual_sales
+
+    def _get_goal_sale_oders(self, year,month):
+        request = ("select SUM(e.goal), y.year AS Year, m.month AS Month " +
+                   "From bi_finance_monthly_goal_employee e " +
+                   "JOIN bi_finance_monthly_goal m on m.id = e.monthly_goal_id " +
+                   "JOIN bi_finance_yearly_goal y on y.id = m.yearly_goal_id " +
+                   "WHERE y.year = '" + year + "' AND m.month = '" + month + "' "+
+                   "GROUP BY Year,Month")
         self.env.cr.execute(request)
         return self.env.cr.fetchall()
