@@ -1,6 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!--==========MENU===========-->
-    <menuitem id="main_bi_finance_menu" name="Module Décicionnel" web_icon="bi_finance,static/src/img/icon.png"/>
+    <menuitem id="main_bi_finance_menu"
+              name="Module Décicionnel"
+              web_icon="bi_finance,static/src/img/icon.png"/>
 
     <menuitem id="bi_finance_menu" name="Finance"
         parent="main_bi_finance_menu"/>
