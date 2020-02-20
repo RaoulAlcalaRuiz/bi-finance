@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="Report =&gt; Show it, custom method">
+    <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="Get id of employee in a global goal">
+      <change afterPath="$PROJECT_DIR$/static/css/report.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/annualSales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/hearder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports.xml" afterDir="false" />
@@ -26,6 +29,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\static\js" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\static" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\static\src\img" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\views" />
@@ -42,29 +49,70 @@
       <option name="presentableId" value="Default" />
       <updated>1581505953948</updated>
     </task>
+    <task id="LOCAL-00001" summary="Get id of employee in a global goal">
+      <created>1582041625469</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582041625469</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Request SQL (get All months, get All employees, get All sale_orders)">
+      <created>1582112289125</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582112289125</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Request SQL (Get goal annual sales, get real annual sales)">
+      <created>1582118053856</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582118053856</updated>
+    </task>
+    <task id="LOCAL-00004" summary="data in JSON format on HTML Qweb report &#10;Get data with js and parse">
+      <created>1582125799980</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582125799980</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Report =&gt; Show it, custom method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Report =&gt; Show it, custom method" />
+    <MESSAGE value="Get id of employee in a global goal" />
+    <MESSAGE value="Request SQL (get All months, get All employees, get All sale_orders)" />
+    <MESSAGE value="Request SQL (Get goal annual sales, get real annual sales)" />
+    <MESSAGE value="data in JSON format on HTML Qweb report &#10;Get data with js and parse" />
+    <option name="LAST_COMMIT_MESSAGE" value="data in JSON format on HTML Qweb report &#10;Get data with js and parse" />
   </component>
   <component name="WindowStateProjectService">
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581520394540">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581520394540" />
-    <state x="59" y="123" key="CommitChangelistDialog2" timestamp="1582041624714">
+    <state x="712" y="158" width="836" height="791" key="CommitChangelistDialog2" timestamp="1582125799409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="59" y="123" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582041624714" />
+    <state x="712" y="158" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1582125799409" />
     <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1581596153126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581596153126" />
-    <state x="1177" y="0" width="750" height="1047" key="dock-window-1" timestamp="1582041189487">
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1582125808905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1177" y="0" width="750" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1582041189487" />
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1582125808905" />
+    <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582187707999" />
+    <state x="985" y="0" width="942" height="1047" key="dock-window-1" timestamp="1582188089739">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="985" y="0" width="942" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1582188089739" />
     <state x="258" y="328" key="git4idea.merge.GitPullDialog" timestamp="1582041635144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

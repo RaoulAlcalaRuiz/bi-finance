@@ -164,11 +164,7 @@ class ReportGoal(models.AbstractModel):
         report = report_obj._get_report_from_name('bi_finance.report_ca_template')
 
         docargs = {
-            'doc_ids': docids,
-            'months': months,
-            'months_ids': months_ids,
-            'employees': employees,
-            'employees_ids': employees_ids,
+            'year': yearly_goal.year,
             'real_annual_sales': real_annual_sales,
             'goal_annual_sales': goal_annual_sales,
             'doc_model': 'bi_finance.yearly_goal'
