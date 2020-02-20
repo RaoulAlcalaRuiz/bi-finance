@@ -1,8 +1,8 @@
 <odoo>
     <!--==========MENU===========-->
-    <menuitem id="main_bi_finance_menu" name="BI Finance" />
+    <menuitem id="main_bi_finance_menu" name="Module Décicionnel" web_icon="bi_finance,static/src/img/icon.png"/>
 
-    <menuitem id="bi_finance_menu" name="BI Finance"
+    <menuitem id="bi_finance_menu" name="Finance"
         parent="main_bi_finance_menu"/>
 
     <menuitem id="yearly_goal_menu" name="Objectif annuel" parent="bi_finance_menu"

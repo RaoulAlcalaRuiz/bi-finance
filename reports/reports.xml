@@ -9,72 +9,68 @@
         menu="True" />
 
     <template id="report_ca_template">
-        <div id="header"></div>
         <t t-call="web.html_container">
-            <t t-call="web.basic_layout">
-                <head>
-                    <link href="/bi_finance/static/css/report.css" rel="stylesheet"/>
-                </head>
-                <body>
-                    <header>
-                        <div class="d-flex justify-content-center">
-                            <img src="\bi_finance\static\src\img\logo module.png" alt="logo aide décisionnelle" class="logo_report"/>
-                        </div>
-                        <h2 class="text-center">Année <t t-esc="year"/></h2>
-                        <ul class="nav justify-content-center mt-3 mb-5">
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-primary">Chiffre d'affaires</button>
-                                <button type="button" class="btn btn-outline-primary">Satisfaction client</button>
-                                <button type="button" class="btn btn-outline-primary">Valeur du stock</button>
-                                <button type="button" class="btn btn-outline-primary">EBITDA</button>
-                            </li>
-                        </ul>
-                    </header>
-                    <!--===========Annual Sales===========-->
-                    <main id="annual_sales">
-                        <div id="container" style="width:800px; height:600px; margin:auto auto;"></div>
-                    </main>
-                    <footer>
-                    </footer>
-                </body>
+             <t t-call="web.basic_layout">
+                    <head>
+                        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-                <!--=======JSON DATA=======-->
-                <div>
-                    <div id="goal" style="visibility:hidden">
-                            [
-                            <t t-foreach="goal_annual_sales" t-as="sale">
-                                <t t-if="len(sale) != 0">
-                                    <t t-esc="sale[0][0]"/>
-                                </t>
-                                <t t-else="">
-                                    null
-                                </t>
-                                ,
-                            </t>
-                            ]
+                        <link href="/bi_finance/static/css/report.css" rel="stylesheet"/>
+                        <script src="https://code.highcharts.com/highcharts.js"></script>
+                        <script src="https://code.highcharts.com/modules/data.js"></script>
+                        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                    </head>
+                    <body>
+                    <div class="header">
+                            <div class="div_logo">
+                                <img src="\bi_finance\static\src\img\logo1.png" alt="logo aide décisionnelle" class="logo_report"/>
+                            </div>
                     </div>
+                            <h2 class="text-center">Année <t t-esc="year"/></h2>
+                            <!--<ul class="nav nav-bar-report">
+                                <li class="nav-item">
+                                    <button type="button" class="btn btn-primary">Chiffre d'affaires</button>
+                                    <button type="button" class="btn btn-outline-primary">Satisfaction client</button>
+                                    <button type="button" class="btn btn-outline-primary">Valeur du stock</button>
+                                    <button type="button" class="btn btn-outline-primary">EBITDA</button>
+                                </li>
+                            </ul>-->
+                        <!--===========Annual Sales===========-->
+                        <main id="annual_sales">
+                            <figure class="highcharts-figure">
+                                <div class="page">
+                                 <div id="container" style="width:800px; height:600px; margin:auto auto;"></div>
+                                </div>
+                                 <table id="datatable">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Réalité</th>
+                                            <th>Objectif</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                         <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                            <tr>
+                                                <th t-esc="index + 1"></th>
+                                                <td t-esc="real_annual_sales[index]"></td>
+                                                <td t-esc="goal_annual_sales[index]"></td>
+                                            </tr>
+                                         </t>
+                                    </tbody>
+                                 </table>
+                            </figure>
 
-                    <div id="real" style="visibility:hidden">
-                        [
-                        <t t-foreach="real_annual_sales" t-as="sale">
-                            <t t-if="len(sale) != 0">
-                                <t t-esc="sale[0][0]"/>
-                            </t>
-                            <t t-else="">
-                                null
-                            </t>
-                            ,
-                        </t>
-                        ]
-                    </div>
-                </div>
-
+                        </main>
+                        <footer>
+                        </footer>
+                    </body>
                 <!--========ALL import JS sources=======-->
-                <script src="https://code.highcharts.com/highcharts.js"></script>
                 <script type="text/javascript" src="/bi_finance/static/js/annualSales.js"/>
-                <!--                 <script type="text/javascript" src="/bi_finance/static/js/header.js"/>-->
+<!--                 <script type="text/javascript" src="/bi_finance/static/js/header.js"/>-->
             </t>
         </t>
     </template>
-
 </odoo>

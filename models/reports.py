@@ -13,8 +13,8 @@ class ReportGoal(models.AbstractModel):
         employees = self._get_employees(months_ids)
         employees_ids = self._get_employees_ids(employees)
 
-        real_annual_sales = self._compute_annual_sales(yearly_goal.year)
-        goal_annual_sales = self._compute_goal_annual_sales(yearly_goal.year)
+        real_annual_sales = self._cumulative_data(self._compute_annual_sales(yearly_goal.year))
+        goal_annual_sales = self._cumulative_data(self._compute_goal_annual_sales(yearly_goal.year))
 
         report_obj = self.env['ir.actions.report']
         report = report_obj._get_report_from_name('bi_finance.report_ca_template')
@@ -92,3 +92,14 @@ class ReportGoal(models.AbstractModel):
                    "GROUP BY Year,Month")
         self.env.cr.execute(request)
         return self.env.cr.fetchall()
+
+    def _cumulative_data(self,list):
+        new_list = []
+        cumulative_data = 0
+        for r in list:
+            if len(r) != 0 :
+                cumulative_data += r[0][0]
+                new_list.append(cumulative_data)
+            else:
+                new_list.append('null')
+        return new_list

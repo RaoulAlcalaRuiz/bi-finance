@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "BI Finance",
+    'name': "Module Décisionnel",
 
     'summary': """
         Module permettant de réaliser des objectifs finacier et de les comparer à la réalité
@@ -12,6 +12,11 @@
 
     'author': "Aquatic Science SA - Raoul Alcala Ruiz",
     'website': "https://www.aquatic-science.be/",
+
+    'images': [
+        'static/src/img/icon.png',
+        'static/src/img/logo1.png',
+    ],
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
