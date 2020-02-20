@@ -1,3 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from . import models
+from . import yearly_goal
+from . import monthly_goal
+from . import monthly_goal_employee
+from . import reports

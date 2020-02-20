@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','sale_management'],
 
     # always loaded
     'data': [
@@ -30,7 +30,7 @@
         'views/monthly_goal.xml',
         'views/monthly_goal_employee.xml',
         'views/menu.xml',
-        'reports.xml',
+        'reports/reports.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
