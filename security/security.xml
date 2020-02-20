@@ -1,0 +1,9 @@
+<odoo>
+    <record id="group_manager" model="res.groups">
+        <field name="name">Module Décisionnel / Manager</field>
+    </record>
+
+    <record id="group_commercial" model="res.groups">
+        <field name="name">Module Décisionnel / Commercial</field>
+    </record>
+</odoo>
