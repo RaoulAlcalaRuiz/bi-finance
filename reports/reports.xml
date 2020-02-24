@@ -41,28 +41,55 @@
                         <main id="annual_sales">
                             <figure class="highcharts-figure">
                                 <div class="page">
-                                 <div id="container" style="width:800px; height:600px; margin:auto auto;"></div>
+                                    <div id="container" style="width:800px; height:600px; margin:auto auto;"></div>
                                 </div>
-                                 <table id="datatable">
+                                <table id="datatable" >
                                     <thead>
                                         <tr>
                                             <th></th>
                                             <th>Réalité</th>
                                             <th>Objectif</th>
+                                            <th>% réalisé</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                          <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                             <tr>
                                                 <th t-esc="index + 1"></th>
-                                                <td t-esc="real_annual_sales[index]"></td>
+                                                <td t-esc="real_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-esc="goal_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <t t-if="average_real_goal[index][1]"><td class="average-true"><t t-esc="average_real_goal[index][0]"></t></td></t>
+                                                <t t-else=""><td class="average-false"><t t-esc="average_real_goal[index][0]"></t></td></t>
+                                            </tr>
+                                         </t>
+                                    </tbody>
+                                    <tfoot id="footer-table">
+                                        <tr>
+                                            <th>Total annuel</th>
+                                            <td t-esc="sum_annual_sales[0]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <td t-esc="sum_annual_sales[1]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <t t-if="sum_annual_sales[3]"><td class="average-true"><t t-esc="sum_annual_sales[2]"></t></td></t>
+                                            <t t-else=""><td class="average-false"><t t-esc="sum_annual_sales[2]"></t></td></t>
+
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </figure>
+
+                            <!--Data hidden for graph-->
+                            <table id="datatable-hidden"  style="visibility:hidden;">
+                                    <thead><tr><th></th><th>Réalité</th><th>Objectif</th></tr></thead>
+                                    <tbody>
+                                         <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                            <tr>
+                                                <th t-esc="index + 1"></th>
+                                                <td t-if="real_annual_sales[index] != 0" t-esc="real_annual_sales[index]"></td>
+                                                <td t-else="" >null</td>
                                                 <td t-esc="goal_annual_sales[index]"></td>
                                             </tr>
                                          </t>
                                     </tbody>
-                                 </table>
-                            </figure>
-
+                                </table>
                         </main>
                         <footer>
                         </footer>

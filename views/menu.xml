@@ -3,6 +3,7 @@
     <!--==========MENU===========-->
     <menuitem id="main_bi_finance_menu"
               name="Module Décicionnel"
+              sequence="4"
               web_icon="bi_finance,static/src/img/icon.png"/>
 
     <menuitem id="bi_finance_menu" name="Finance"

@@ -1,7 +1,7 @@
 
 Highcharts.chart('container', {
     data: {
-        table: 'datatable'
+        table: 'datatable-hidden'
     },
     chart: {
         type: 'area'

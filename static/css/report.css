@@ -53,3 +53,23 @@
 #datatable tr:hover {
     background: #f1f7ff;
 }
+
+#datatable tfoot tr:last-child {
+    border-top: solid 1px black;
+}
+
+#datatable thead tr:last-child {
+    border-bottom: solid 1px black;
+}
+
+#datatable thead th:last-child ,#datatable tbody td:last-child, tfoot td:last-child{
+    border-left: solid 1px black;
+}
+
+.average-false{
+    color:#e66e65
+}
+
+.average-true{
+    color:#2a9139
+}
