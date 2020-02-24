@@ -13,7 +13,7 @@ class AverageList:
                 sum_data += r[0][0]
         return sum_data
 
-    def cumulative_data(self):
+    def cumulative_data(self,stop):
         new_list = []
         cumulative_data = 0
         for r in self._list:
@@ -21,8 +21,23 @@ class AverageList:
                 cumulative_data += r[0][0]
                 new_list.append(cumulative_data)
             else:
-                new_list.append(0)
+                if stop:
+                    if self.data_continue(len(new_list)):
+                        new_list.append(cumulative_data)
+                    else:
+                        new_list.append('null')
+                else:
+                    new_list.append(cumulative_data)
         return new_list
+
+    def data_continue(self, i):
+        index_null = 0
+        index = i
+        while i < len(self._list):
+            if len(self._list[i]) == 0:
+                index_null += 1
+            i += 1
+        return not(index_null+index == len(self._list))
 
     def compute_average(self, year, list_goal):
         new_list = []
@@ -37,8 +52,12 @@ class AverageList:
                 new_list.append([average.get_pourcentage_formated(),
                                  average.compute_in_time_average(real_days, days)
                                  ])
+            elif (self._list[i] == "null") & (list_goal[i] != 'null'):
+                new_list.append(["{:4.1f} %".format(0), False])
+            elif (self._list[i] != "null") & (list_goal[i] == 'null'):
+                new_list.append(["{:4.1f} %".format(100), True])
             else:
-                new_list.append([0, True])
+                new_list.append(["{:4.1f} %".format(0), True])
             i += 1
         return new_list
 

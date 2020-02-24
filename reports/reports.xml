@@ -56,7 +56,8 @@
                                          <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                             <tr>
                                                 <th t-esc="index + 1"></th>
-                                                <td t-esc="real_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-if="real_annual_sales[index] != 'null'" t-esc="real_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-else="" t-esc="zero_value" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                                 <td t-esc="goal_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                                 <t t-if="average_real_goal[index][1]"><td class="average-true"><t t-esc="average_real_goal[index][0]"></t></td></t>
                                                 <t t-else=""><td class="average-false"><t t-esc="average_real_goal[index][0]"></t></td></t>

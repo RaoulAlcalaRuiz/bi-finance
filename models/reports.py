@@ -1,9 +1,6 @@
-from odoo import models, fields, api, exceptions
-from datetime import datetime
-import calendar
+from odoo import models, api
 
-from .average import AverageList, Average
-from .computer_date import ComputerDate
+from ..classes.average import AverageList, Average
 
 
 class ReportGoal(models.AbstractModel):
@@ -16,8 +13,8 @@ class ReportGoal(models.AbstractModel):
         real_annual_sales_draft = self._compute_annual_sales(yearly_goal.year)
         goal_annual_sales_draft = self._compute_goal_annual_sales(yearly_goal.year)
 
-        real_annual_sales = AverageList(real_annual_sales_draft).cumulative_data()
-        goal_annual_sales = AverageList(goal_annual_sales_draft).cumulative_data()
+        real_annual_sales = AverageList(real_annual_sales_draft).cumulative_data(True)
+        goal_annual_sales = AverageList(goal_annual_sales_draft).cumulative_data(False)
 
         average_real_goal = AverageList(real_annual_sales).compute_average(yearly_goal.year, goal_annual_sales)
 
@@ -39,6 +36,7 @@ class ReportGoal(models.AbstractModel):
             'average_real_goal': average_real_goal,
             'sum_annual_sales': sum_annual_sales,
             'currency_id': currency_id,
+            'zero_value':0,
             'doc_model': 'bi_finance.yearly_goal'
         }
         return docargs
@@ -74,4 +72,3 @@ class ReportGoal(models.AbstractModel):
         for i in range(1, 13):
             goal_annual_sales.append(self._get_goal_sale_oders(year, str(i)))
         return goal_annual_sales
-
