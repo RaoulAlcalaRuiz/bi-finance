@@ -61,6 +61,16 @@ class AverageList:
             i += 1
         return new_list
 
+    def extract_first_value(self):
+        new_list = []
+        for r in self._list:
+            if len(r) != 0:
+                new_list.append(r[0][0])
+            else :
+                new_list.append(0)
+        return new_list
+
+
 # =============  Average Class  =============
 class Average:
     def __init__(self, first, second):

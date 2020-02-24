@@ -16,7 +16,7 @@
 
 }
 
-#container {
+#area-annual-sales, bar-annual-sales {
     height: 400px;
 }
 
@@ -26,7 +26,7 @@
     margin: 1em auto;
 }
 
-#datatable {
+.datatable {
     font-family: Verdana, sans-serif;
     border-collapse: collapse;
     border: 1px solid #EBEBEB;
@@ -35,34 +35,34 @@
     width: 100%;
     max-width: 500px;
 }
-#datatable caption {
+.datatable caption {
     padding: 1em 0;
     font-size: 1.2em;
     color: #555;
 }
-#datatable th {
+.datatable th {
 	font-weight: 600;
     padding: 0.5em;
 }
-#datatable td, #datatable th, #datatable caption {
+.datatable td, .datatable th, .datatable caption {
     padding: 0.5em;
 }
-#datatable thead tr, #datatable tr:nth-child(even) {
+.datatable thead tr, .datatable tr:nth-child(even) {
     background: #f8f8f8;
 }
-#datatable tr:hover {
+.datatable tr:hover {
     background: #f1f7ff;
 }
 
-#datatable tfoot tr:last-child {
+.datatable tfoot tr:last-child {
     border-top: solid 1px black;
 }
 
-#datatable thead tr:last-child {
+.datatable thead tr:last-child {
     border-bottom: solid 1px black;
 }
 
-#datatable thead th:last-child ,#datatable tbody td:last-child, tfoot td:last-child{
+.datatable thead th:last-child ,.datatable tbody td:last-child, tfoot td:last-child{
     border-left: solid 1px black;
 }
 

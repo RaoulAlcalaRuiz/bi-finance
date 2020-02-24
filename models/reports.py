@@ -9,10 +9,12 @@ class ReportGoal(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         yearly_goal = self.env['bi_finance.yearly_goal'].browse(docids)
+        currency_id = self.env.ref('base.main_company').currency_id
 
         real_annual_sales_draft = self._compute_annual_sales(yearly_goal.year)
         goal_annual_sales_draft = self._compute_goal_annual_sales(yearly_goal.year)
 
+        # Cumulative data
         real_annual_sales = AverageList(real_annual_sales_draft).cumulative_data(True)
         goal_annual_sales = AverageList(goal_annual_sales_draft).cumulative_data(False)
 
@@ -27,13 +29,20 @@ class ReportGoal(models.AbstractModel):
         sum_annual_sales.append(
             Average(sum_annual_sales[0], sum_annual_sales[1]).compute_in_time_average_year(yearly_goal.year))
 
-        currency_id = self.env.ref('base.main_company').currency_id
+        # Normal Data
+        normal_real_annual_sales = AverageList(real_annual_sales_draft).extract_first_value()
+        normal_goal_annual_sales = AverageList(goal_annual_sales_draft).extract_first_value()
+
+        normal_average_real_goal = AverageList(normal_real_annual_sales).compute_average(yearly_goal.year, normal_goal_annual_sales)
 
         docargs = {
             'year': yearly_goal.year,
             'real_annual_sales': real_annual_sales,
             'goal_annual_sales': goal_annual_sales,
             'average_real_goal': average_real_goal,
+            'normal_real_annual_sales': normal_real_annual_sales,
+            'normal_goal_annual_sales': normal_goal_annual_sales,
+            'normal_average_real_goal': normal_average_real_goal,
             'sum_annual_sales': sum_annual_sales,
             'currency_id': currency_id,
             'zero_value':0,

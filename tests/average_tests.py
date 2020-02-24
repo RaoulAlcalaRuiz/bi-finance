@@ -202,5 +202,13 @@ class AverageListTest(unittest.TestCase):
         compute_in_time_average = Average(first, second).compute_in_time_average(20, 100)
         self.assertEqual(compute_in_time_average, expected)
 
+    # Extract First Value
+    def test_extract_first_value_normal(self):
+        list = [[], [(20,5,6)], [(6,5,6)]]
+        new_list = [0, 20, 6]
+
+        compute_average = AverageList(list).extract_first_value()
+        self.assertEqual(compute_average, new_list)
+
 if __name__ == '__main__':
     unittest.main()
