@@ -36,6 +36,7 @@
         'views/monthly_goal_employee.xml',
         'views/menu.xml',
         'reports/reports.xml',
+        'reports/reports_employee.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

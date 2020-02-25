@@ -1,0 +1,151 @@
+<odoo>
+    <report
+        id="ca_employee_report"
+        model="bi_finance.yearly_goal"
+        string="Goal Employee Report"
+        name="bi_finance.report_ca_employee_template"
+        file="bi_finance.report_ca_employee_template"
+        report_type="qweb-html"
+        menu="True" />
+
+    <template id="report_ca_employee_template">
+        <t t-call="web.html_container">
+             <t t-call="web.basic_layout">
+                    <head>
+                        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+                        <link href="/bi_finance/static/css/report.css" rel="stylesheet"/>
+                        <script src="https://code.highcharts.com/highcharts.js"></script>
+                        <script src="https://code.highcharts.com/modules/data.js"></script>
+                        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                    </head>
+                    <body>
+                    <div class="header">
+                            <div class="div_logo">
+                                <img src="\bi_finance\static\src\img\logo1.png" alt="logo aide décisionnelle" class="logo_report"/>
+                            </div>
+                    </div>
+                            <h1 class="text-center">Rapport de <t t-esc="name_user"/></h1>
+                            <h2 class="text-center">Année <t t-esc="year"/></h2>
+                            <!--<ul class="nav nav-bar-report">
+                                <li class="nav-item">
+                                    <button type="button" class="btn btn-primary">Chiffre d'affaires</button>
+                                    <button type="button" class="btn btn-outline-primary">Satisfaction client</button>
+                                    <button type="button" class="btn btn-outline-primary">Valeur du stock</button>
+                                    <button type="button" class="btn btn-outline-primary">EBITDA</button>
+                                </li>
+                            </ul>-->
+                        <!--===========Annual Sales===========-->
+                    <div class="page">
+                        <figure class="highcharts-figure mt-5">
+                            <div id="area-annual-sales" style="width:800px; height:600px; margin:auto auto;"></div>
+                                <h3 class="text-center ">Valeurs mensuels</h3>
+                                <table class="datatable" >
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Réalité</th>
+                                            <th>Objectif</th>
+                                            <th>% réalisé</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                         <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                            <tr>
+                                                <th t-esc="index + 1"></th>
+                                                <td t-if="cumulative_employe_annual_sales[index] != 'null'" t-esc="cumulative_employe_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-else="" t-esc="zero_value" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-esc="cumulative_employe_goal_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <t t-if="cumulative_employe_average_real_goal[index][1]"><td class="average-true"><t t-esc="cumulative_employe_average_real_goal[index][0]"></t></td></t>
+                                                <t t-else=""><td class="average-false"><t t-esc="cumulative_employe_average_real_goal[index][0]"></t></td></t>
+                                            </tr>
+                                         </t>
+                                    </tbody>
+                                    <tfoot id="footer-table">
+                                        <tr>
+                                            <th>Total annuel</th>
+                                            <td t-esc="cumulative_sum_employe_annual_sales[0]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <td t-esc="cumulative_sum_employe_annual_sales[1]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <t t-if="cumulative_sum_employe_annual_sales[3]"><td class="average-true"><t t-esc="cumulative_sum_employe_annual_sales[2]"></t></td></t>
+                                            <t t-else=""><td class="average-false"><t t-esc="cumulative_sum_employe_annual_sales[2]"></t></td></t>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                        </figure>
+                        <p style="page-break-after:always;">   </p>
+                        <figure class="highcharts-figure mt-5">
+                            <div id="bar-annual-sales" style="width:800px; height:600px; margin:auto auto;"></div>
+                                <h3 class="text-center ">Valeurs mensuels</h3>
+                                <table class="datatable" >
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Réalité</th>
+                                            <th>Objectif</th>
+                                            <th>% réalisé</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                         <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                            <tr>
+                                                <th t-esc="index + 1"></th>
+                                                <td t-esc="employe_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-esc="employe_goal_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <t t-if="employe_average_real_goal[index][1]"><td class="average-true"><t t-esc="employe_average_real_goal[index][0]"></t></td></t>
+                                                <t t-else=""><td class="average-false"><t t-esc="employe_average_real_goal[index][0]"></t></td></t>
+                                            </tr>
+                                         </t>
+                                    </tbody>
+                                    <tfoot id="footer-table">
+                                        <tr>
+                                            <th>Total annuel</th>
+                                            <td t-esc="sum_employe_annual_sales[0]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <td t-esc="sum_employe_annual_sales[1]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <t t-if="sum_employe_annual_sales[3]"><td class="average-true"><t t-esc="sum_employe_annual_sales[2]"></t></td></t>
+                                            <t t-else=""><td class="average-false"><t t-esc="sum_employe_annual_sales[2]"></t></td></t>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+
+                        </figure>
+                    </div>
+
+
+                        <!--Data hidden for graph-->
+                        <table id="cumulative-annual-sales" style="visibility:hidden;  position: absolute;">
+                            <thead><tr><th></th><th>Réalité</th><th>Objectif</th></tr></thead>
+                            <tbody>
+                                 <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                    <tr>
+                                        <th t-esc="index + 1"></th>
+                                        <td t-esc="cumulative_employe_annual_sales[index]"></td>
+                                        <td t-esc="cumulative_employe_goal_annual_sales[index]"></td>
+                                    </tr>
+                                 </t>
+                            </tbody>
+                        </table>
+
+                        <table id="annual-sales" style="visibility:hidden;  position: absolute;">
+                            <thead><tr><th></th><th>Réalité</th><th>Objectif</th></tr></thead>
+                            <tbody>
+                                 <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                    <tr>
+                                        <th t-esc="index + 1"></th>
+                                        <td t-esc="employe_annual_sales[index]"></td>
+                                        <td t-esc="employe_goal_annual_sales[index]"></td>
+                                    </tr>
+                                 </t>
+                            </tbody>
+                        </table>
+                    </body>
+                <!--========ALL import JS sources=======-->
+                <script type="text/javascript" src="/bi_finance/static/js/annualSalesEmployee.js"/>
+<!--                 <script type="text/javascript" src="/bi_finance/static/js/header.js"/>-->
+            </t>
+        </t>
+    </template>
+</odoo>

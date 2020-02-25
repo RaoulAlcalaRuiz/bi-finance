@@ -66,6 +66,10 @@
     border-left: solid 1px black;
 }
 
+.datatable-without-end thead th:last-child ,.datatable-without-end tbody td:last-child{
+    border-left: solid 0px black !important;
+}
+
 .average-false{
     color:#e66e65
 }

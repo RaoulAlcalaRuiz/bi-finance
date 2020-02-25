@@ -71,3 +71,25 @@ Highcharts.chart('bar-annual-sales', {
         color: '#5e8fbd'
         }]
 });
+
+Highcharts.chart('bar-employee-annual-sales', {
+    data: {
+        table: 'employe-annual-sales'
+    },
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Objectif mensuel des employés'
+    },
+    yAxis: {
+        labels: {
+            formatter: function () {
+                return this.value / 1000 + 'k';
+            }
+        }
+    },
+    tooltip: {
+        pointFormat: '{series.name} \: <b>{point.y:,.0f}</b>'
+    },
+});

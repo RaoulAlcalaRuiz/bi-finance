@@ -74,8 +74,65 @@ class AverageListTest(unittest.TestCase):
 
     def test_cumulative_data_all_null_data_stop(self):
         list = [[], [], []]
-        new_list = ['null', 'null', 'null']
+        new_list = [0, 'null', 'null']
         cumulative_data = AverageList(list).cumulative_data(True)
+        self.assertEqual(cumulative_data, new_list)
+
+    # =============  Cumulative1d Data  =============
+    # Continue
+    def test_cumulative1d_data_normal(self):
+        list = [1,4,2]
+        new_list = [1, 5, 7]
+        cumulative_data = AverageList(list).cumulative_data_1d(False)
+        self.assertEqual(cumulative_data, new_list)
+
+    def test_cumulative1d_data_null_data_continue(self):
+        list = [0, 4, 0]
+        new_list = [0, 4, 4]
+        cumulative_data = AverageList(list).cumulative_data_1d(False)
+        self.assertEqual(cumulative_data, new_list)
+
+    def test_cumulative1d_data_all_null_data_continue(self):
+        list = [0, 0, 0]
+        new_list = [0, 0, 0]
+        cumulative_data = AverageList(list).cumulative_data_1d(False)
+        self.assertEqual(cumulative_data, new_list)
+
+    def test_cumulative1d_data_null_data_continue_2(self):
+        list = [4, 0, 0]
+        new_list = [4, 4, 4]
+        cumulative_data = AverageList(list).cumulative_data_1d(False)
+        self.assertEqual(cumulative_data, new_list)
+
+    # Stop
+    def test_cumulative1d_data_stop(self):
+        list = [1, 4, 2]
+        new_list = [1, 5, 7]
+        cumulative_data = AverageList(list).cumulative_data_1d(True)
+        self.assertEqual(cumulative_data, new_list)
+
+    def test_cumulative1d_data_null_data_stop(self):
+        list = [4, 0, 0]
+        new_list = [4, 'null', 'null']
+        cumulative_data = AverageList(list).cumulative_data_1d(True)
+        self.assertEqual(cumulative_data, new_list)
+
+    def test_cumulative1d_data_null_data_stop_1(self):
+        list = [0, 4, 5, 0]
+        new_list = [0, 4, 9, 'null']
+        cumulative_data = AverageList(list).cumulative_data_1d(True)
+        self.assertEqual(cumulative_data, new_list)
+
+    def test_cumulative1d_data_null_data_stop_2(self):
+        list = [0, 4, 5, 0, 2, 0]
+        new_list = [0, 4, 9, 9, 11, 'null']
+        cumulative_data = AverageList(list).cumulative_data_1d(True)
+        self.assertEqual(cumulative_data, new_list)
+
+    def test_cumulative1d_data_all_null_data_stop(self):
+        list = [0, 0, 0]
+        new_list = [0, 'null', 'null']
+        cumulative_data = AverageList(list).cumulative_data_1d(True)
         self.assertEqual(cumulative_data, new_list)
 
     # =============  Compute Average  =============
@@ -98,12 +155,12 @@ class AverageListTest(unittest.TestCase):
     def test_compute_average_past_null_2(self):
         list = [5, 'null', 'null']
         second_list = [10, 10, 10]
-        new_list = [['50.0 %', False], [' 0.0 %', True], [' 0.0 %', True]]
+        new_list = [['50.0 %', False], [' 0.0 %', False], [' 0.0 %', False]]
 
         compute_average = AverageList(list).compute_average(2018, second_list)
         self.assertEqual(compute_average, new_list)
 
-    def test_compute_average_past_null_2(self):
+    def test_compute_average_past_null_3(self):
         list = [5, 'null', 'null']
         second_list = ['null', 'null', 10]
         new_list = [['100.0 %', True], [' 0.0 %', True], [' 0.0 %', False]]
@@ -125,6 +182,15 @@ class AverageListTest(unittest.TestCase):
         new_list = [[' 0.0 %', False], [' 0.0 %', True], ['100.0 %', True]]
 
         compute_average = AverageList(list).compute_average(2025, second_list)
+        self.assertEqual(compute_average, new_list)
+
+
+    def test_compute_average_futur_null_4(self):
+        list = [5,5]
+        second_list = [0,0]
+        new_list = [['100.0 %', True],['100.0 %', True]]
+
+        compute_average = AverageList(list).compute_average(2020, second_list)
         self.assertEqual(compute_average, new_list)
 
     def test_compute_average_present_normal(self):
