@@ -1,0 +1,140 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <section class="mt-5">
+        <div>
+            <div class="d-flex justify-content-center mt-5">
+                <img style="width:25% !important;" src="logo1.png" alt="objectifs annuels exemple">
+            </div>
+            <p class="mt-2" style="width:50%; margin:auto auto;" >
+                Cette application permet de réaliser des objectifs annuels, mensuels et de les comparer à la réalité. Les objectifs mis en place visent divers secteurs de la société :
+            </p>
+            <ul  class="mt-3 text-center" style="margin:0 auto; padding:0 0;font-weight:bold;list-style-type: none;" >
+                <li>Chiffres d'affaires</li>
+                <li>Satisfaction des clients</li>
+                <li>Gestion des stocks</li>
+                <li>EBIDTA</li>
+            </ul>
+        </div>
+    </section>
+    <section style="margin-top:70px">
+        <div style="width:60%; margin:auto auto;">
+            <h3 class="text-center">Comment ça marche ?</h3>
+
+            <p class="mt-2 text-center">
+                L'application est divisée en 4 parties :
+            </p>
+            <ul class="mt-1 text-center" style="padding:0 0;">
+                <li>Les objectifs annuels</li>
+                <li>Les objectifs mensuels</li>
+                <li>les objectifs spécifiques</li>
+                <li>Les rapports</li>
+            </ul>
+        </div>
+    </section>
+
+    <section style="margin-top:70px">
+        <div style="width:60%; margin:auto auto;">
+            <h4 class="mt-3 text-center">
+                Les objectifs annuels
+            </h4>
+            <p class="mt-2">
+                Cette partie est accessible via le menu "Finance" > "Objectif annuel".
+                Elle permet de visualiser les objectifs dans la globalité de l'année.
+                Le nom de ces objectifs est directement nommées par l'année.
+                Il est impossible de pouvoir créer plusieurs objectif annuel la même année.
+            </p>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <img style="width:80% !important;  padding: 10px;  box-shadow: 5px 10px 8px #888888;" src="objectif_annuel_menu.png" alt="objectifs annuels exemple">
+        </div>
+    </section>
+
+    <section style="margin-top:70px">
+        <div style="width:60%; margin:auto auto;">
+            <h4 class="mt-3 text-center">
+                Les objectifs mensuels
+            </h4>
+            <p class="mt-2">
+                Cette partie est accessible via le menu "Finance" > "Objectif mensuel".
+                Elle permet de visualiser tous les objectifs mensuels de toutes les années.
+                Bien sur elle peuvent être regrouper et filtré comme dans n'importe qu'elle application Odoo.
+                Le nom de ces objectifs est directement nommées par le mois et l'année de l'objectif.
+                Il est impossible de pouvoir créer plusieurs objectif mensuel le même mois et années.
+            </p>
+        </div>
+        <div class="d-flex justify-content-center mt-5">
+            <img style="width:80% !important; padding: 10px;  box-shadow: 5px 10px 8px #888888;" src="objectif_mensuel_menu.png" alt="objectifs annuels exemple">
+        </div>
+    </section>
+
+    <section style="margin-top:70px">
+        <div style="width:60%; margin:auto auto;">
+            <h4 class="mt-3 text-center">
+                Les rapports
+            </h4>
+            <p class="mt-2">
+                Alors pour pouvoir être compris par tout le monde définissons ce qu'est un rapport au sein de cette application.
+                Un rapport est la partie de l'application qui compare les objectifs avec la réalité à l'aide de graphiques.
+                Ces graphiques sont bien sûr téléchargeable et adapté pour l'impression.
+            </p>
+            <p class="mt-2">
+                Pour acceder au rapport il faut se trouver dans la fenêtre d'un objectif annuel et vous selectionnez l'objectif que vous voulez-voir dans le menu d'impression,
+                dans mon cas je vais allez voir le chiffres d'affaires annuel :
+                "print" > "Goal Year Report"
+            </p>
+            <div class="d-flex justify-content-center mt-5">
+                <img style="width:80% !important; padding: 10px;  box-shadow: 5px 10px 8px #888888;" src="path_report.png" alt="objectifs annuels exemple">
+            </div>
+        </div>
+        <div class="d-flex justify-content-between align-item-center flex-column mt-5">
+            <img class="rounded mx-auto" style="width:80% !important; padding: 10px;  box-shadow: 5px 10px 8px #888888;" src="report_1.png" alt="objectifs annuels exemple">
+            <img class="rounded mx-auto" style="width:80% !important; padding: 10px;  box-shadow: 5px 10px 8px #888888;" src="report_2.png" alt="objectifs annuels exemple">
+            <p style="width:80% !important;" class="mx-auto">
+                A chaque fois qu'un graphique est affiché, un récapitulatif sous forme de tableau est affiché.
+                Dans le cas de l'objectif chiffres d'affaires :
+                Les tableaux affiche le pourcentage réalisé. La couleur du pourcentage (rouge ou vert) indique si nous somme dans les temps.
+                C'est à dire que si nous sommes le 20 Janvier, le résultat du chiffres d'affaires attendu doit être supérieur à 64% car 20 / 31 est égal à 64% (20 = le jour actuel et 31 le nombre de jours dans le mois de janvier)
+            </p>
+        </div>
+    </section>
+
+    <section style="margin-top:70px">
+        <div style="width:60%; margin:auto auto;">
+            <h4 class="mt-3 text-center">
+                L'objectif chiffres d'affaires
+            </h4>
+            <p class="mt-2">
+                Pour mettre en place cet objectif il vous faut créer un objectif annuel et un objectif mensuel.
+                Ensuite vous vous dirigez dans le menu "objectif mensuel par employé" dans le menu "Finance".
+            </p>
+            <p class="mt-2" style="font-weight: bold;">
+                Comment cela fonctionne ?
+            </p>
+            <p class="mt-1">
+                Rien de plus simple, il vous suffit d'ajouter des objectifs mensuel pour vos employés en indiquant le chiffre d'affaires qu'il doit réaliser par mois grâce aux bon de commandes qu'il a fait.
+                Voici un exemple pour être plus concret :
+                Je vais rajouter un objectif à Mitchel Admin et il devra faire un total de 30 000 € en janvier 2020.
+            </p>
+            <div class="d-flex justify-content-center ">
+                <img style="width:80% !important; padding: 10px;  box-shadow: 5px 10px 8px #888888;" src="employee_ca.png" alt="objectifs annuels exemple">
+            </div>
+            <p class="mt-2">
+                Quand vous ajoutez des objectifs aux employés, l'objectif mensuel de Janvier 2020 est passé à 30 000 €, pareil pour l'année 2020.
+                L'objectif annuel reprends tous les objectifs des employés de l'année, pareil pour les objectifs mensuels.
+                Les comparatifs réalité objectif sont alors visible dans les rapports.
+            </p>
+            <p class="mt-2">
+                Les rapports disponibles dans cet objectif :
+            </p>
+
+            <ul class="mt-1">
+                <li>Le rapport annuel du chiffres d'affaires de toutes la société</li>
+                <li>Le rapport annuel destiné à l'utilisateur connecté</li>
+            </ul>
+        </div>
+    </section>
+
+</body>
