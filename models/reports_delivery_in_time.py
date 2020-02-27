@@ -59,7 +59,7 @@ class ReportGoalEmployee(models.AbstractModel):
         return self.env['bi_finance.yearly_goal'].browse(id)
 
     def _get_id_company(self,id):
-        return self.env['bi_finance.monthly_goal'].search([("yearly_goal_id","=",id)])[0].company_id.id
+        return self.env['bi_finance.yearly_goal'].search([("id","in",id)])[0].company_id.id
 
     def _get_percent_each_month(self,id_year):
         new_list = []

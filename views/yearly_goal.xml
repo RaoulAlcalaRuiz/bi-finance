@@ -76,6 +76,7 @@
                         <group string="Objectif" colspan="4">
                             <field name="year"/>
                             <field name="goal"/>
+                            <field name="company_id"/>
                         </group>
                     </group>
                     <notebook colspan="4">

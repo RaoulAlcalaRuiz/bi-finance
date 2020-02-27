@@ -11,9 +11,6 @@ class monthlyGoal(models.Model):
     goal_percentage_in_time = fields.Percent(string="Pourcentage",required=True,help="Pourcentage de livraison à temps")
     day_before_delivery = fields.Integer(string="Delai d'avance",required=True,help="Delai d'avance sur la livraison (jour)", default=5)
 
-    company_id = fields.Many2one('res.company',
-                                     ondelete='cascade', string="Société", required=True)
-
     currency_id = fields.Many2one(
         'res.currency', string='Currency')
     goal = fields.Monetary(string="Objectif du mois", compute='_goal_compute')
