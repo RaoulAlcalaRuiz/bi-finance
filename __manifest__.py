@@ -25,7 +25,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale_management'],
+    'depends': ['base','sale_management','percent_field'],
 
     # always loaded
     'data': [
@@ -37,6 +37,7 @@
         'views/menu.xml',
         'reports/reports.xml',
         'reports/reports_employee.xml',
+        'reports/reports_delivery_in_time.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

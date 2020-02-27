@@ -3,7 +3,7 @@
     <record model="ir.actions.act_window" id="yearly_goal_list_action">
         <field name="name">Objectif annuel</field>
         <field name="res_model">bi_finance.yearly_goal</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Créez votre premier objectif annuel.
@@ -33,8 +33,7 @@
                     <templates>
                         <t t-name="kanban-box">
                             <div
-                                    t-attf-class="oe_kanban_global_click_edit oe_semantic_html_override
-                                                  oe_kanban_card {{record.group_fancy==1 ? 'oe_kanban_card_fancy' : ''}}">
+                                    t-attf-class="oe_kanban_global_click_edit">
                                 <div t-attf-class="oe_kanban_content">
                                     <!-- title -->
                                     Année :

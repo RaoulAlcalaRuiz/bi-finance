@@ -53,14 +53,23 @@
                             <field name="month"/>
                             <field name="goal"/>
                         </group>
-                        <group string="Les objectifs personnel" colspan="2" col="2">
-                            <field name="monthly_goal_employee_ids">
-                                <tree>
-                                    <field name="name"/>
-                                    <field name="goal"/>
-                                </tree>
-                            </field>
-                        </group>
+                        <notebook colspan="4">
+                            <page string="Les objectifs personnel">
+                                <field name="monthly_goal_employee_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="goal"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Satisfaction client">
+                                <group colspan="2" col="2">
+                                    <field name="goal_percentage_in_time" class="mb-3"/>
+                                    <field name="day_before_delivery" class="mb-3"/>
+                                    <field name="company_id" class="mb-3"/>
+                                </group>
+                            </page>
+                        </notebook>
                     </group>
                 </sheet>
             </form>

@@ -1,0 +1,75 @@
+<odoo>
+    <report
+        id="delivery_in_time_report"
+        model="bi_finance.yearly_goal"
+        string="Delivery in time Report"
+        name="bi_finance.delivery_in_time_report_template"
+        file="bi_finance.delivery_in_time_report_template"
+        report_type="qweb-html"
+        menu="True" />
+
+    <template id="delivery_in_time_report_template">
+        <t t-call="web.html_container">
+             <t t-call="web.basic_layout">
+                    <head>
+                        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+                        <link href="/bi_finance/static/css/report.css" rel="stylesheet"/>
+                        <script src="https://code.highcharts.com/highcharts.js"></script>
+                        <script src="https://code.highcharts.com/modules/data.js"></script>
+                        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+                        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+                    </head>
+                    <body>
+                        <div class="header">
+                                <div class="div_logo">
+                                    <img src="\bi_finance\static\src\img\logo1.png" alt="logo aide décisionnelle" class="logo_report"/>
+                                </div>
+                        </div>
+
+                        <h1 class="text-center">Rapport sur le délais des livraisons</h1>
+                        <h2 class="text-center">Année <t t-esc="year"/></h2>
+                        <div class="page">
+
+                            <figure class="highcharts-figure mt-5">
+                                <div id="delivery_in_time" style="width:800px; height:600px; margin:auto auto;"></div>
+                                <h3 class="text-center ">Valeurs mensuels</h3>
+                                <table class="datatable">
+                                    <thead><tr><th></th><th>OTB mensuel</th><th>OTB cumulé</th><th>Objectif</th></tr></thead>
+                                    <tbody>
+                                         <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                            <tr>
+                                                <th t-esc="index + 1"></th>
+                                                <t t-if="goal_achieved[index]" ><td class="average-true" t-esc="list_in_time_formated[index]"></td></t>
+                                                <t t-else="" ><td class="average-false" t-esc="list_in_time_formated[index]"></td></t>
+                                                <td t-esc="list_in_time_accrued_formated[index]"></td>
+                                                <td t-esc="percent_wanted_formated[index]"></td>
+                                            </tr>
+                                         </t>
+                                    </tbody>
+                                </table>
+                            </figure>
+                        </div>
+
+                        <table id="delivery-in-time" style="visibility:hidden;  position: absolute;">
+                            <thead><tr><th></th><th>OTB mensuel</th><th>OTB cumulé</th><th>Objectif</th></tr></thead>
+                            <tbody>
+                                 <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                    <tr>
+                                        <th t-esc="index + 1"></th>
+                                        <td t-esc="list_in_time[index]"></td>
+                                        <td t-esc="list_in_time_accrued[index]"></td>
+                                        <td t-esc="percent_wanted[index]"></td>
+                                    </tr>
+                                 </t>
+                            </tbody>
+                        </table>
+                    </body>
+                <!--========ALL import JS sources=======-->
+                <script type="text/javascript" src="/bi_finance/static/js/deliveryInTime.js"/>
+            </t>
+        </t>
+    </template>
+</odoo>
