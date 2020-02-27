@@ -24,18 +24,23 @@
                     </head>
                     <body>
                         <div class="header">
+                            <div>
                                 <div class="div_logo">
                                     <img src="\bi_finance\static\src\img\logo1.png" alt="logo aide décisionnelle" class="logo_report"/>
                                 </div>
+                                <br/>
+                                <h2 class="text-center">Rapport sur le délais des livraisons - Année <t t-esc="year"/></h2>
+                            </div>
                         </div>
 
-                        <h1 class="text-center">Rapport sur le délais des livraisons</h1>
-                        <h2 class="text-center">Année <t t-esc="year"/></h2>
                         <div class="page">
 
                             <figure class="highcharts-figure mt-5">
+                                <br/>
+                                <h3 class="text-center ">Valeurs OTB mensuels</h3>
                                 <div id="delivery_in_time" style="width:800px; height:600px; margin:auto auto;"></div>
-                                <h3 class="text-center ">Valeurs mensuels</h3>
+                                <p style="page-break-after:always;">   </p>
+                                <h3 class="text-center ">Valeurs OTB mensuels</h3>
                                 <table class="datatable">
                                     <thead><tr><th></th><th>OTB mensuel</th><th>OTB cumulé</th><th>Objectif</th></tr></thead>
                                     <tbody>
@@ -53,6 +58,7 @@
                             </figure>
                         </div>
 
+                        <br/>
                         <table id="delivery-in-time" style="visibility:hidden;  position: absolute;">
                             <thead><tr><th></th><th>OTB mensuel</th><th>OTB cumulé</th><th>Objectif</th></tr></thead>
                             <tbody>

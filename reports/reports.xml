@@ -24,11 +24,14 @@
                     </head>
                     <body>
                     <div class="header">
+                        <div>
                             <div class="div_logo">
                                 <img src="\bi_finance\static\src\img\logo1.png" alt="logo aide décisionnelle" class="logo_report"/>
                             </div>
+                            <br/>
+                            <h2 class="text-center">Chiffres d'affaires - Année <t t-esc="year"/></h2>
+                        </div>
                     </div>
-                            <h2 class="text-center">Année <t t-esc="year"/></h2>
                             <!--<ul class="nav nav-bar-report">
                                 <li class="nav-item">
                                     <button type="button" class="btn btn-primary">Chiffre d'affaires</button>
@@ -40,7 +43,9 @@
                         <!--===========Annual Sales===========-->
                     <div class="page">
                             <figure class="highcharts-figure">
+                                    <h3 class="text-center">Valeurs mensuel cumulées</h3>
                                     <div id="area-annual-sales" style="width:800px; height:600px; margin:auto auto;"></div>
+                                    <p style="page-break-after:always;">   </p>
                                     <h3 class="text-center">Valeurs mensuel cumulées</h3>
                                     <table class="datatable" >
                                         <thead>
@@ -76,7 +81,9 @@
                             </figure>
                         <p style="page-break-after:always;">   </p>
                         <figure class="highcharts-figure mt-5">
+                            <h3 class="text-center ">Valeurs mensuels</h3>
                             <div id="bar-annual-sales" style="width:800px; height:600px; margin:auto auto;"></div>
+                                <p style="page-break-after:always;">   </p>
                                 <h3 class="text-center ">Valeurs mensuels</h3>
                                 <table class="datatable" >
                                     <thead>
@@ -114,7 +121,9 @@
                         </figure>
                         <p style="page-break-after:always;">   </p>
                         <figure class="highcharts-figure mt-5">
+                            <h3 class="text-center ">Objectif mensuels des employés</h3>
                             <div id="bar-employee-annual-sales" style="width:800px; height:600px; margin:auto auto;"></div>
+                            <p style="page-break-after:always;">   </p>
                             <h3 class="text-center ">Objectif mensuels des employés</h3>
                             <table class="datatable datatable-without-end">
                                 <thead>
