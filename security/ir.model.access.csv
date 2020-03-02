@@ -1,8 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-yearly_goal_manager,Yearly Goal Manager,model_bi_finance_yearly_goal,group_manager,1,1,1,1
-monthly_goal_manager,Monthly Goal Manager,model_bi_finance_monthly_goal,group_manager,1,1,1,1
-monthly_goal_employee_manager,Monthly Goal Employee Manager,model_bi_finance_monthly_goal_employee,group_manager,1,1,1,1
-
-yearly_goal_commercial,Yearly Goal Commercial,model_bi_finance_yearly_goal,group_commercial,1,0,0,0
-monthly_goal_commercial,Monthly Goal Commercial,model_bi_finance_monthly_goal,group_commercial,1,0,0,0
-monthly_goal_employee_commercial,Monthly Goal Employee Commercial,model_bi_finance_monthly_goal_employee,group_commercial,1,0,0,0
+access_bi_finance_bi_finance,bi_finance.bi_finance,model_bi_finance_bi_finance,base.group_user,1,1,1,1
