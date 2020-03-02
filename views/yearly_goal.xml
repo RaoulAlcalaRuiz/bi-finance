@@ -3,7 +3,7 @@
     <record model="ir.actions.act_window" id="yearly_goal_list_action">
         <field name="name">Objectif annuel</field>
         <field name="res_model">bi_finance.yearly_goal</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,kanban,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Créez votre premier objectif annuel.
@@ -29,24 +29,25 @@
             <field name="name">bi_finance.yearly_goal.kanban</field>
             <field name="model">bi_finance.yearly_goal</field>
             <field name="arch" type="xml">
-            <kanban>
-                <templates>
-                    <t t-name="kanban-box">
-                        <div>
-                            <div t-attf-class="oe_kanban_content">
-                                <!-- title -->
-                                Année :
-                                <field name="name"/>
-                                <br/>
-                                Objectif :
-                                <field name="goal"/> €
-                                <br/>
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div
+                                    t-attf-class="oe_kanban_global_click_edit">
+                                <div t-attf-class="oe_kanban_content">
+                                    <!-- title -->
+                                    Année :
+                                    <field name="name"/>
+                                    <br/>
+                                    Objectif :
+                                    <field name="goal"/> €
+                                    <br/>
+                                </div>
                             </div>
-                        </div>
-                    </t>
-                </templates>
-            </kanban>
-        </field>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
     </record>
 
     <!-- Search objectif annuel -->
@@ -75,6 +76,7 @@
                         <group string="Objectif" colspan="4">
                             <field name="year"/>
                             <field name="goal"/>
+                            <field name="company_id"/>
                         </group>
                     </group>
                     <notebook colspan="4">

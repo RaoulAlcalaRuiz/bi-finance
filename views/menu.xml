@@ -1,16 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!--==========MENU===========-->
-    <menuitem id="main_bi_finance_menu" name="BI Finance" />
+    <menuitem id="main_bi_finance_menu"
+              name="Module Décicionnel"
+               web_icon="bi_finance,static/description/icon.png"
+              sequence="4"
+             />
 
-    <menuitem id="bi_finance_menu" name="BI Finance"
-        parent="main_bi_finance_menu"/>
+    <menuitem id="objectif_menu" name="Objectif"
+        sequence="5" parent="main_bi_finance_menu"/>
 
-    <menuitem id="yearly_goal_menu" name="Objectif annuel" parent="bi_finance_menu"
+    <menuitem id="ca_menu" name="Chiffres d'affaires"
+       sequence="6" parent="main_bi_finance_menu"/>
+
+    <menuitem id="yearly_goal_menu" name="Objectif annuel" parent="objectif_menu"
         action="yearly_goal_list_action"/>
 
-    <menuitem id="monthly_goal_menu" name="Objectif mensuel" parent="bi_finance_menu"
+    <menuitem id="monthly_goal_menu" name="Objectif mensuel" parent="objectif_menu"
         action="monthly_goal_list_action"/>
 
-    <menuitem id="monthly_goal_employee_menu" name="Objectif mensuel par employé" parent="bi_finance_menu"
+    <menuitem id="monthly_goal_employee_menu" name="Commerciaux" parent="ca_menu"
         action="monthly_goal_employee_list_action"/>
 </odoo>
