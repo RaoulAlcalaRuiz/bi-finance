@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 def compute_achievement(reality, goal):
@@ -43,4 +43,34 @@ class DateDelivery:
     def change_list(self,list):
         self._list = list
         self.new_list = self._value_null_in_futur()
+
+class DateDeliveryOne:
+    def __init__(self,commitment_date,effective_date,delta):
+        self._commitment_date = commitment_date
+        self._effective_date = effective_date
+        self._delta = delta
+
+    def delivery_in_time(self):
+        if self._commitment_date:
+            commitment_date = self._commitment_date
+            commitment_date = commitment_date - timedelta(days=self._delta)
+
+            if self._effective_date:
+                effective_date = self._effective_date
+                effective_date = datetime(effective_date.year, effective_date.month, effective_date.day, 0, 0)
+                if commitment_date < effective_date:
+                    return -1
+                else:
+                    return 1
+            else:
+                today = datetime.today()
+                if commitment_date < today:
+                    return -1
+                else:
+                    return 0
+        else:
+            if self._effective_date:
+                return 1
+            else:
+                return 0
 

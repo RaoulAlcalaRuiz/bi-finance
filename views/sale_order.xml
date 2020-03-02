@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_view_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <br/>
+                <field name="commitment_date" string="Date de livraison prévue :"/>
+                <field name="effective_date" readonly="1"/>
+            </xpath>
+            <xpath expr="//page[@name='customer_signature']"  position="after">
+                <page string="Satisfaction client">
+                    <group>
+                        <field name="justification_for_delay" string="Justification de retard"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

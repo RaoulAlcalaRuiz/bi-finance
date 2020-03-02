@@ -12,11 +12,11 @@ class yearlyGoal(models.Model):
 
     currency_id = fields.Many2one(
         'res.currency', string='Currency')
-    goal = fields.Monetary(string="Objectif de l'année", help='Ce champ sera calculé grace aux objectifs mensuel',
+    goal = fields.Monetary(string="Objectif de l'année", help='Ce champ sera calculé grace aux objectifs mensuels',
                            compute='_goal_compute_year')
 
     company_id = fields.Many2one('res.company',
-                                     ondelete='cascade', string="Société", required=True)
+                                     ondelete='cascade', string="Société", default=1, required=True)
 
     monthly_goal_ids = fields.One2many(
         'bi_finance.monthly_goal', 'yearly_goal_id', string="Objectif mensuels")

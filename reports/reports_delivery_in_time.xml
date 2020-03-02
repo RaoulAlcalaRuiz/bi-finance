@@ -37,12 +37,12 @@
 
                             <figure class="highcharts-figure mt-5">
                                 <br/>
-                                <h3 class="text-center ">Valeurs OTB mensuels</h3>
+                                <h3 class="text-center ">Valeurs OTD mensuels</h3>
                                 <div id="delivery_in_time" style="width:800px; height:600px; margin:auto auto;"></div>
                                 <p style="page-break-after:always;">   </p>
-                                <h3 class="text-center ">Valeurs OTB mensuels</h3>
+                                <h3 class="text-center ">Valeurs OTD mensuels</h3>
                                 <table class="datatable">
-                                    <thead><tr><th></th><th>OTB mensuel</th><th>OTB cumulé</th><th>Objectif</th></tr></thead>
+                                    <thead><tr><th></th><th>OTD mensuel</th><th>OTD cumulé</th><th>Objectif</th></tr></thead>
                                     <tbody>
                                          <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                             <tr>
@@ -60,7 +60,7 @@
 
                         <br/>
                         <table id="delivery-in-time" style="visibility:hidden;  position: absolute;">
-                            <thead><tr><th></th><th>OTB mensuel</th><th>OTB cumulé</th><th>Objectif</th></tr></thead>
+                            <thead><tr><th></th><th>OTD mensuel</th><th>OTD cumulé</th><th>Objectif</th></tr></thead>
                             <tbody>
                                  <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                     <tr>

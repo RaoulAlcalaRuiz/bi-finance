@@ -38,6 +38,7 @@
         'reports/reports.xml',
         'reports/reports_employee.xml',
         'reports/reports_delivery_in_time.xml',
+        'views/sale_order.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
