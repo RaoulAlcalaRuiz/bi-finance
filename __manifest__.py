@@ -31,13 +31,15 @@
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'reports/reports.xml',
+        'reports/reports_delivery_in_time.xml',
+        'reports/reports_employee.xml',
         'views/yearly_goal.xml',
+        'views/yearly_goal_delivery.xml',
+        'views/yearly_goal_employee.xml',
         'views/monthly_goal.xml',
         'views/monthly_goal_employee.xml',
         'views/menu.xml',
-        'reports/reports.xml',
-        'reports/reports_employee.xml',
-        'reports/reports_delivery_in_time.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

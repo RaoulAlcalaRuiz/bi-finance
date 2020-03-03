@@ -3,15 +3,11 @@
     <!--==========MENU===========-->
     <menuitem id="main_bi_finance_menu"
               name="Module Décicionnel"
-               web_icon="bi_finance,static/description/icon.png"
-              sequence="4"
-             />
+               web_icon="bi_finance,static/description/icon.png"/>
 
-    <menuitem id="objectif_menu" name="Objectif"
-        sequence="5" parent="main_bi_finance_menu"/>
-
-    <menuitem id="ca_menu" name="Chiffres d'affaires"
-       sequence="6" parent="main_bi_finance_menu"/>
+    <!--==========Objectif==========-->
+    <menuitem id="objectif_menu" name="Objectif" parent="main_bi_finance_menu"
+        groups="group_manager"/>
 
     <menuitem id="yearly_goal_menu" name="Objectif annuel" parent="objectif_menu"
         action="yearly_goal_list_action"/>
@@ -19,6 +15,23 @@
     <menuitem id="monthly_goal_menu" name="Objectif mensuel" parent="objectif_menu"
         action="monthly_goal_list_action"/>
 
-    <menuitem id="monthly_goal_employee_menu" name="Commerciaux" parent="ca_menu"
+    <menuitem id="monthly_goal_employee_menu" name="Objectif commercial" parent="objectif_menu"
         action="monthly_goal_employee_list_action"/>
+
+    <!--==========Chiffre d'affaires==========-->
+    <menuitem id="chiffre_affaire_menu" name="Chiffres d'affaires" parent="main_bi_finance_menu"/>
+
+    <menuitem id="report_goal_commercial" name="Mes objectifs" parent="chiffre_affaire_menu"
+              groups="group_commercial"
+              action="yearly_goal_list_employee_action"/>
+
+    <menuitem id="report_goal_commercial" name="Objectif" parent="chiffre_affaire_menu"
+        action="yearly_goal_list_employee_action"/>
+
+    <!--==========Satisfaction client==========-->
+    <menuitem id="satisfaction_bi_menu" name="Satisfaction client" parent="main_bi_finance_menu"
+        groups="group_livraison"/>
+
+    <menuitem id="delivery_in_time" name="Livraison dans les délais" parent="satisfaction_bi_menu"
+        action="yearly_goal_list_delivery_action"/>
 </odoo>

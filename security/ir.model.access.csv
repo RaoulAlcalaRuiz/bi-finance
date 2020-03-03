@@ -6,3 +6,7 @@ monthly_goal_employee_manager,Monthly Goal Employee Manager,model_bi_finance_mon
 yearly_goal_commercial,Yearly Goal Commercial,model_bi_finance_yearly_goal,group_commercial,1,0,0,0
 monthly_goal_commercial,Monthly Goal Commercial,model_bi_finance_monthly_goal,group_commercial,1,0,0,0
 monthly_goal_employee_commercial,Monthly Goal Employee Commercial,model_bi_finance_monthly_goal_employee,group_commercial,1,0,0,0
+
+yearly_goal_livraison,Yearly Goal Livraison,model_bi_finance_yearly_goal,group_livraison,1,0,0,0
+monthly_goal_livraison,Monthly Goal Livraison,model_bi_finance_monthly_goal,group_livraison,1,0,0,0
+monthly_goal_employee_livraison,Monthly Goal Employee Livraison,model_bi_finance_monthly_goal_employee,group_livraison,1,0,0,0

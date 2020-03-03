@@ -6,7 +6,9 @@
         name="bi_finance.report_ca_employee_template"
         file="bi_finance.report_ca_employee_template"
         report_type="qweb-html"
-        menu="True" />
+        menu="True"
+        groups="group_commercial"
+    />
 
     <template id="report_ca_employee_template">
         <t t-call="web.html_container">
@@ -43,10 +45,10 @@
                         <!--===========Annual Sales===========-->
                     <div class="page">
                         <figure class="highcharts-figure mt-5">
-                            <h3 class="text-center ">Valeurs mensuels</h3>
+                            <h3 class="text-center ">Valeurs mensuels cumulées</h3>
                             <div id="area-annual-sales" style="width:800px; height:600px; margin:auto auto;"></div>
                                 <p style="page-break-after:always;">   </p>
-                                <h3 class="text-center ">Valeurs mensuels</h3>
+                                <h3 class="text-center ">Valeurs mensuels cumulées</h3>
                                 <table class="datatable" >
                                     <thead>
                                         <tr>

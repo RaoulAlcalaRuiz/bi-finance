@@ -1,0 +1,43 @@
+<odoo>
+
+    <!--View Kaban objectif annuel-->
+    <record model="ir.ui.view" id="view_yearly_employee_kanban">
+        <field name="name">employee.report.kanban</field>
+        <field name="model">bi_finance.yearly_goal</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_content">
+                                Année :
+                                <field name="name"/>
+                                <br/>
+                                <div>
+                                    <button  class="btn btn-primary"
+                                             string="Mes objectifs"
+                                             name="%(ca_employee_report)d"
+                                             type="action">
+                                        Mes objectifs
+                                    </button>
+                                </div>
+                            </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+        <!--==========View and Action objectif annuel===========-->
+    <record model="ir.actions.act_window" id="yearly_goal_list_employee_action">
+        <field name="name">Livraison dans les délais</field>
+        <field name="res_model">bi_finance.yearly_goal</field>
+        <field name="view_mode">kanban</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_yearly_employee_kanban')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Il n'y a pas d'objectif de livraison.
+            </p>
+        </field>
+    </record>
+</odoo>

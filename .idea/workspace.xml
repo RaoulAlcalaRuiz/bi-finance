@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/yearly_goal_delivery.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/yearly_goal_employee.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports_delivery_in_time.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_delivery_in_time.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_employee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security/security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security/security.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/monthly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/yearly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -264,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583156428490</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fixed fail merge">
+      <created>1583159006010</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1583159006010</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -291,18 +304,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed fail merge" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581520394540">
+    <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583237566536">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581520394540" />
+    <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583237566536" />
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583156016961">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583156016961" />
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583156426770">
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583159004475">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583156426770" />
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583159004475" />
     <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1582802830560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -343,10 +356,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582730082521" />
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583156435920">
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583159009579">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583156435920" />
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583159009579" />
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -375,5 +388,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="258" y="328" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583155482692" />
+    <state x="267" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1583162588730">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="267" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583162588730" />
   </component>
 </project>

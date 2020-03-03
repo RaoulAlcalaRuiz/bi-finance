@@ -3,7 +3,7 @@
     <record model="ir.actions.act_window" id="yearly_goal_list_action">
         <field name="name">Objectif annuel</field>
         <field name="res_model">bi_finance.yearly_goal</field>
-        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Créez votre premier objectif annuel.
@@ -33,7 +33,7 @@
                     <templates>
                         <t t-name="kanban-box">
                             <div
-                                    t-attf-class="oe_kanban_global_click_edit">
+                                    t-attf-class="oe_kanban_global_click">
                                 <div t-attf-class="oe_kanban_content">
                                     <!-- title -->
                                     Année :
@@ -68,6 +68,18 @@
         <field name="model">bi_finance.yearly_goal</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button  class="btn btn-primary"
+                             string="Livraison dans les délais"
+                             name="%(delivery_in_time_report)d"
+                             type="action"
+                    />
+                    <button  class="btn btn-primary"
+                             string="Chiffres d'affaires"
+                             name="%(delivery_in_time_report)d"
+                             type="action"
+                    />
+                </header>
                 <sheet>
                     <group string="Objectif annuel" col="12">
                         <group string="Info" colspan="8">
@@ -86,6 +98,8 @@
                                     <field name="name"/>
                                     <field name="month"/>
                                     <field name="yearly_goal_id"/>
+                                    <field name="goal_percentage_in_time"/>
+                                    <field name="day_before_delivery"/>
                                 </tree>
                             </field>
                         </page>

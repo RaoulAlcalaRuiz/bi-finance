@@ -10,4 +10,5 @@
     <record id="group_livraison" model="res.groups">
         <field name="name">Module Décisionnel / Livraison</field>
     </record>
+
 </odoo>
