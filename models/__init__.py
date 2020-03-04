@@ -7,3 +7,4 @@ from . import reports_employee
 from . import yearly_goal
 from . import monthly_goal
 from . import monthly_goal_employee
+from . import sql_request

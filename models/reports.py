@@ -102,15 +102,9 @@ class ReportGoal(models.AbstractModel):
             all_employee_goal.append((id[1],employee_goal))
         return all_employee_goal
 
-    # récupère tout user id ayant vendu ou ayant un objectif
+    # récupère tout user id ayant un objectif sur le CA
     def _get_user_id_have_sale_and_goal(self, year):
-        request = ("select Distinct(u.id), p.name AS Employee "
-                   "From sale_order o "
-                   "JOIN res_users u on u.id = o.user_id "
-                   "JOIN res_partner p on p.id = u.partner_id "
-                   "WHERE TO_CHAR(o.date_order,'YYYY') = '" + year + "' AND o.state = 'sale' "
-                                                                     "Union "
-                                                                     "select Distinct(u.id), p.name AS Employee " +
+        request = ("select Distinct(u.id), p.name AS Employee " +
                    "From bi_finance_monthly_goal_employee e " +
                    "JOIN bi_finance_monthly_goal m on m.id = e.monthly_goal_id " +
                    "JOIN bi_finance_yearly_goal y on y.id = m.yearly_goal_id " +

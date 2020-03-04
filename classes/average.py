@@ -109,6 +109,13 @@ class AverageList:
                 new_list.append(0)
         return new_list
 
+    def compute_difference(self, list_real):
+        new_list = []
+        i = 0
+        while i < len(self._list):
+            new_list.append(self._list[i]-list_real[i])
+            i += 1
+        return new_list
 
 # =============  Average Class  =============
 class Average:

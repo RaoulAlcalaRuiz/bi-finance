@@ -34,14 +34,7 @@
                             <h2 class="text-center">Rapport Chiffres d'affaires de <t t-esc="name_user"/> - Année <t t-esc="year"/></h2>
                         </div>
                     </div>
-                            <!--<ul class="nav nav-bar-report">
-                                <li class="nav-item">
-                                    <button type="button" class="btn btn-primary">Chiffre d'affaires</button>
-                                    <button type="button" class="btn btn-outline-primary">Satisfaction client</button>
-                                    <button type="button" class="btn btn-outline-primary">Valeur du stock</button>
-                                    <button type="button" class="btn btn-outline-primary">EBITDA</button>
-                                </li>
-                            </ul>-->
+
                         <!--===========Annual Sales===========-->
                     <div class="page">
                         <figure class="highcharts-figure mt-5">
@@ -120,6 +113,65 @@
                                 </table>
 
                         </figure>
+                        <p style="page-break-after:always;">   </p>
+                        <figure class="highcharts-figure mt-5">
+                            <h3 class="text-center ">Prévisions</h3>
+                            <div id="bar-annual-sales-forecast" style="width:800px; height:600px; margin:auto auto;"></div>
+                                <p style="page-break-after:always;">   </p>
+                                <h3 class="text-center ">Valeurs mensuels</h3>
+                                <table class="datatable" >
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Résultats</th>
+                                            <th>Prévisions</th>
+                                            <th>Objectif</th>
+                                            <th>% Prévisonnel</th>
+                                            <th>Différence</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                         <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                            <tr>
+                                                <th t-esc="index + 1"></th>
+                                                <td t-esc="employe_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-esc="employe_annual_sales_forecast[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-esc="employe_goal_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <t t-if="employe_average_forecast_goal[index][1]"><td class="average-true"><t t-esc="employe_average_forecast_goal[index][0]"></t></td></t>
+                                                <t t-else=""><td class="average-false"><t t-esc="employe_average_forecast_goal[index][0]"></t></td></t>
+                                                <td t-esc="employe_difference_forecast_real[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            </tr>
+                                         </t>
+                                    </tbody>
+                                    <tfoot id="footer-table">
+                                        <tr>
+                                            <th>Total annuel</th>
+                                            <td t-esc="sum_employe_annual_sales_forecast[0]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <td t-esc="sum_employe_annual_sales_forecast[1]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <td t-esc="sum_employe_annual_sales_forecast[2]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <t t-if="sum_employe_annual_sales_forecast[4]"><td class="average-true"><t t-esc="sum_employe_annual_sales_forecast[3]"></t></td></t>
+                                            <t t-else=""><td class="average-false"><t t-esc="sum_employe_annual_sales_forecast[3]"></t></td></t>
+                                            <td t-esc="sum_employe_annual_sales_forecast[5]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                                <table class="datatable" >
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Date ind.</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                         <t t-foreach="[0]" t-as="index">
+                                            <tr>
+                                                <th t-esc="date_ind[index][0]"></th>
+                                                <td t-esc="date_ind[index][1]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            </tr>
+                                         </t>
+                                    </tbody>
+                                </table>
+                        </figure>
                     </div>
 
 
@@ -145,6 +197,19 @@
                                         <th t-esc="index + 1"></th>
                                         <td t-esc="employe_annual_sales[index]"></td>
                                         <td t-esc="employe_goal_annual_sales[index]"></td>
+                                    </tr>
+                                 </t>
+                            </tbody>
+                        </table>
+
+                        <table id="annual-sales-forecast" style="visibility:hidden;  position: absolute;">
+                            <thead><tr><th></th><th>Résultats</th><th>Prévisions</th></tr></thead>
+                            <tbody>
+                                 <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                    <tr>
+                                        <th t-esc="index + 1"></th>
+                                        <td t-esc="employe_annual_sales[index]"></td>
+                                        <td t-esc="employe_annual_sales_forecast[index]"></td>
                                     </tr>
                                  </t>
                             </tbody>

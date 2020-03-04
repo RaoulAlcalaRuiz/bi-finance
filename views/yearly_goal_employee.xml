@@ -29,7 +29,7 @@
 
         <!--==========View and Action objectif annuel===========-->
     <record model="ir.actions.act_window" id="yearly_goal_list_employee_action">
-        <field name="name">Livraison dans les délais</field>
+        <field name="name">Mes objectifs</field>
         <field name="res_model">bi_finance.yearly_goal</field>
         <field name="view_mode">kanban</field>
             <field name="view_ids" eval="[(5, 0, 0),

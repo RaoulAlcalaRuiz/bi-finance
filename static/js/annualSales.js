@@ -82,11 +82,9 @@ Highcharts.chart('bar-employee-annual-sales', {
     title: {
         text: 'Objectif mensuel des employés'
     },
-    yAxis: {
-        labels: {
-            formatter: function () {
-                return this.value / 1000 + 'k';
-            }
+    plotOptions: {
+        column: {
+            stacking: 'percent'
         }
     },
     tooltip: {

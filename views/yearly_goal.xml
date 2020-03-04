@@ -76,7 +76,7 @@
                     />
                     <button  class="btn btn-primary"
                              string="Chiffres d'affaires"
-                             name="%(delivery_in_time_report)d"
+                             name="%(ca_report)d"
                              type="action"
                     />
                 </header>

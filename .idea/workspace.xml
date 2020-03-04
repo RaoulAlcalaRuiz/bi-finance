@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/yearly_goal_delivery.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/yearly_goal_employee.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/sql_request.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports_delivery_in_time.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_delivery_in_time.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/average.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/average.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reports_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports_employee.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/reports_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_employee.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security/security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/annualSales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/monthly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/yearly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/yearly_goal_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal_employee.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583159006010</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Divide section + security (delivery, commercial, manager)">
+      <created>1583244058118</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1583244058118</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -301,7 +315,8 @@
     <MESSAGE value="Delivery in time done (array report and chart)" />
     <MESSAGE value="Part 2 finished" />
     <MESSAGE value="Fixed fail merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed fail merge" />
+    <MESSAGE value="Divide section + security (delivery, commercial, manager)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Divide section + security (delivery, commercial, manager)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583237566536">
@@ -312,10 +327,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583156016961" />
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583159004475">
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583319651781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583159004475" />
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583319651781" />
     <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1582802830560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -356,18 +371,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582730082521" />
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583159009579">
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583244072060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583159009579" />
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583244072060" />
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582187707999" />
-    <state x="1140" y="0" width="787" height="1047" key="dock-window-1" timestamp="1582722570782">
+    <state x="785" y="0" width="1142" height="1047" key="dock-window-1" timestamp="1583247792052">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1140" y="0" width="787" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1582722570782" />
+    <state x="785" y="0" width="1142" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1583247792052" />
     <state x="915" y="86" width="974" height="1047" key="dock-window-2" timestamp="1582808195372">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
