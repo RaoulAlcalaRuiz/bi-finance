@@ -1,5 +1,7 @@
 from odoo import models, api
 
+from .request.sale_order import get_sale_oders
+from .request.sale_order_goal import get_user_id_have_goal, get_goal_of_user, get_goal_sale_oders
 from ..classes.average import AverageList, Average
 
 
@@ -55,46 +57,26 @@ class ReportGoal(models.AbstractModel):
         }
         return docargs
 
-    def _get_sale_oders(self, year_goal, month_goal):
-        request = ("select SUM(s.amount_untaxed), TO_CHAR(s.date_order, 'YYYY') AS Year, " +
-                   "TO_CHAR(s.date_order, 'MM') AS Month " +
-                   "From sale_order s " +
-                   "WHERE TO_CHAR(s.date_order, 'YYYY MM') = '" + year_goal + " " + month_goal + "'"
-                                                                                                 "AND s.state = 'sale' "
-                                                                                                 "GROUP BY Year,Month ")
-        self.env.cr.execute(request)
-        return self.env.cr.fetchall()
-
-    def _get_goal_sale_oders(self, year, month):
-        request = ("select SUM(e.goal), y.year AS Year, m.month AS Month " +
-                   "From bi_finance_monthly_goal_employee e " +
-                   "JOIN bi_finance_monthly_goal m on m.id = e.monthly_goal_id " +
-                   "JOIN bi_finance_yearly_goal y on y.id = m.yearly_goal_id " +
-                   "WHERE y.year = '" + year + "' AND m.month = '" + month + "' " +
-                   "GROUP BY Year,Month")
-        self.env.cr.execute(request)
-        return self.env.cr.fetchall()
-
     def _compute_annual_sales(self, year):
         real_annual_sales = []
         for i in range(1, 13):
-            real_annual_sales.append(self._get_sale_oders(year, "{:02d}".format(i)))
+            real_annual_sales.append(get_sale_oders(self,year, "{:02d}".format(i)))
         return real_annual_sales
 
     def _compute_goal_annual_sales(self, year):
         goal_annual_sales = []
         for i in range(1, 13):
-            goal_annual_sales.append(self._get_goal_sale_oders(year, str(i)))
+            goal_annual_sales.append(get_goal_sale_oders(self,year, str(i)))
         return goal_annual_sales
 
     def _compute_goal_employee(self, year):
         all_employee_goal = []
-        employee_ids = self._get_user_id_have_sale_and_goal(year)
+        employee_ids = get_user_id_have_goal(self,year)
         for id in employee_ids:
             employee_goal = []
             for i in range(1, 13):
                 goal = 0
-                goal = self._get_goal_of_user(id[0],year, str(i))
+                goal = get_goal_of_user(self,id[0],year, str(i))
                 if len(goal) != 0:
                     employee_goal.append(goal[0][0])
                 else:
@@ -102,26 +84,4 @@ class ReportGoal(models.AbstractModel):
             all_employee_goal.append((id[1],employee_goal))
         return all_employee_goal
 
-    # récupère tout user id ayant un objectif sur le CA
-    def _get_user_id_have_sale_and_goal(self, year):
-        request = ("select Distinct(u.id), p.name AS Employee " +
-                   "From bi_finance_monthly_goal_employee e " +
-                   "JOIN bi_finance_monthly_goal m on m.id = e.monthly_goal_id " +
-                   "JOIN bi_finance_yearly_goal y on y.id = m.yearly_goal_id " +
-                   "JOIN res_users u on u.id = e.commercial_id " +
-                   "JOIN res_partner p on p.id = u.partner_id " +
-                   "WHERE y.year = '" + year + "' ")
-        self.env.cr.execute(request)
-        return self.env.cr.fetchall()
 
-    def _get_goal_of_user(self, user, year, month):
-        request = ("select SUM(e.goal), y.year AS Year, m.month AS Month " +
-                   "From bi_finance_monthly_goal_employee e " +
-                   "JOIN bi_finance_monthly_goal m on m.id = e.monthly_goal_id " +
-                   "JOIN bi_finance_yearly_goal y on y.id = m.yearly_goal_id " +
-                   "JOIN res_users u on u.id = e.commercial_id " +
-                   "JOIN res_partner p on p.id = u.partner_id " +
-                   "WHERE y.year = '" + str(year) + "' AND m.month = '" + str(month) + "' AND u.id = '" + str(user) + "' " +
-                   "GROUP BY Year,Month,p.name ")
-        self.env.cr.execute(request)
-        return self.env.cr.fetchall()

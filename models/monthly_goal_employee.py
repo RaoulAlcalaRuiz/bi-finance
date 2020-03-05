@@ -13,13 +13,7 @@ class monthlyGoalEmployee(models.Model):
           ondelete='cascade', string="Objectif mensuel", required=True)
 
      commercial_id = fields.Many2one('res.users',
-        ondelete='set null', string="Commercial", index=True)
-
-     _sql_constraints = [
-          ('name_unique',
-           'UNIQUE(name)',
-           "Vous ne pouvez pas créer plusieurs objectifs mensuels à un employé le même mois et la même année")
-     ]
+        ondelete='cascade', string="Commercial", index=True,required=True)
 
      @api.onchange('commercial_id',' monthly_goal_id')
      def _compute_name(self):

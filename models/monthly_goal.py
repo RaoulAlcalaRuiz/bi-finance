@@ -8,7 +8,7 @@ class monthlyGoal(models.Model):
     name = fields.Char(string="Titre", compute='_compute_name')
     month = fields.Selection(selection='_month', string='Mois', required=True)
 
-    goal_percentage_in_time = fields.Percent(string="Pourcentage",required=True,help="Pourcentage de livraison à temps")
+    goal_percentage_in_time = fields.Percent(string="Pourcentage",required=True,help="Pourcentage de livraison à temps", default=0)
     day_before_delivery = fields.Integer(string="Delai d'avance",required=True,help="Delai d'avance sur la livraison (jour)", default=5)
 
     currency_id = fields.Many2one(
@@ -20,12 +20,6 @@ class monthlyGoal(models.Model):
 
     monthly_goal_employee_ids = fields.One2many(
         'bi_finance.monthly_goal_employee', 'monthly_goal_id', string="Objectif mensuels des employés")
-
-    _sql_constraints = [
-        ('name_unique',
-         'UNIQUE(name)',
-         "Vous ne pouvez pas créer plusieurs objectifs mensuels le même mois et la même année")
-    ]
 
     @api.depends('goal', 'monthly_goal_employee_ids')
     def _goal_compute(self):

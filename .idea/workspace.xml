@@ -2,24 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/sql_request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/sale_order.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/sale_order_forecast.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/sale_order_goal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/sale_order_ind.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/average.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/average.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/monthly_goal.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly_goal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/monthly_goal_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly_goal_employee.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/reports_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports_employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_employee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/annualSales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/monthly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/yearly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/yearly_goal_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal_employee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sale_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sql_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sql_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/deliveryInTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/deliveryInTime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sale_order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/sale_order.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,20 +46,20 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/description" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\classes" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\classes" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\reports" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\static\description" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\static\src\img" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\request" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\classes" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\classes" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Unittests for date_delivery_tests.DateDeliveryTest.test_compute_achievement_1">
@@ -291,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583244058118</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Date ind.">
+      <created>1583319671781</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1583319671781</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -316,7 +319,8 @@
     <MESSAGE value="Part 2 finished" />
     <MESSAGE value="Fixed fail merge" />
     <MESSAGE value="Divide section + security (delivery, commercial, manager)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Divide section + security (delivery, commercial, manager)" />
+    <MESSAGE value="Date ind." />
+    <option name="LAST_COMMIT_MESSAGE" value="Date ind." />
   </component>
   <component name="WindowStateProjectService">
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583237566536">
@@ -327,10 +331,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583156016961" />
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583319651781">
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583319669111">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583319651781" />
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583319669111" />
     <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1582802830560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -371,18 +375,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582730082521" />
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583244072060">
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583319682402">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583244072060" />
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583319682402" />
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582187707999" />
-    <state x="785" y="0" width="1142" height="1047" key="dock-window-1" timestamp="1583247792052">
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1583396442316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="785" y="0" width="1142" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1583247792052" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1583396442316" />
     <state x="915" y="86" width="974" height="1047" key="dock-window-2" timestamp="1582808195372">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

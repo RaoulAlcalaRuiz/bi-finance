@@ -13,7 +13,10 @@ Highcharts.chart('delivery_in_time', {
             formatter: function () {
                 return this.value;
             }
-        }
+        },
+        min: 0,
+        max: 100,
+        tickInterval: 20,
     },
     tooltip: {
         pointFormat: '{series.name} \: <b>{point.y:,.0f}</b>'

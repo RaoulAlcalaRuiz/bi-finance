@@ -25,7 +25,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale_management','percent_field','stock'],
+    'depends': ['base','sale_management','percent_field','stock','account'],
 
     # always loaded
     'data': [
@@ -40,6 +40,7 @@
         'views/monthly_goal.xml',
         'views/monthly_goal_employee.xml',
         'views/menu.xml',
+        'views/sale_order.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

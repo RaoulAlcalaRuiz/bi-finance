@@ -13,11 +13,45 @@
             </xpath>
             <xpath expr="//page[@name='customer_signature']"  position="after">
                 <page string="Satisfaction client">
-                    <group>
-                        <field name="justification_for_delay" string="Justification de retard"/>
-                    </group>
+                        <group string="Délais" col="4">
+                            <div class="o_td_label" colspan="2">
+                                <label for="is_late"/>
+                            </div>
+                            <field name="is_late" nolabel="1" colspan="2"/>
+
+                            <div class="o_td_label" colspan="2" attrs="{'readonly': [('is_late', '=', False)]}">
+                                <label for="justification_for_delay" string="Justification de retard"/>
+                            </div>
+                            <field name="justification_for_delay" colspan="2" nolabel="1"  attrs="{'readonly': [('is_late', '=', False)]}"/>
+                        </group >
+                        <group string="Qualité" col="4">
+                            <div class="o_td_label" colspan="2" >
+                                <label for="problematic_quality"/>
+                            </div>
+                            <field name="problematic_quality" nolabel="1" colspan="2" attrs="{'readonly': [('effective_date', '=', False)]}"/>
+
+                            <div class="o_td_label" colspan="2" attrs="{'readonly': [('problematic_quality', '=', False)]}">
+                                <label for="justification_quality" string="Justification de retard"/>
+                            </div>
+                            <field name="justification_quality" colspan="2" nolabel="1"  attrs="{'readonly': [('problematic_quality', '=', False)]}"/>
+                        </group>
                 </page>
             </xpath>
         </field>
+    </record>
+
+    <!--Inherit quotations search view-->
+    <record id="view_sale_order_inherit_delivery_search" model="ir.ui.view">
+      <field name="name">sale.order.search.delivery.filter</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+      <field name="arch" type="xml">
+        <xpath expr="//search" position="inside">
+          <!-- This field will show up on the default filters
+               &lt; is the XML encoding for < and &gt; is the XML encoding for > -->
+          <filter string="Livraison en retard" name="delivery_is_late" domain="[('delivery_late', '=', -1)]"/>
+          <filter string="Livraison livrée à temps" name="delivery_on_time" domain="[('delivery_late','=','1')]"/>
+        </xpath>
+      </field>
     </record>
 </odoo>
