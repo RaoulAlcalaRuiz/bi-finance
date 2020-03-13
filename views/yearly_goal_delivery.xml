@@ -18,7 +18,7 @@
                                              string="délais"
                                              name="%(delivery_in_time_report)d"
                                              type="action">
-                                        Livraison dans les délais
+                                        Objectif
                                     </button>
                                 </div>
                             </div>
@@ -29,51 +29,13 @@
         </field>
     </record>
 
-    <!--Formulaire d'ajout ou de modification d'un objectif annuel-->
-    <record model="ir.ui.view" id="year_delivery_form_view">
-        <field name="name">bi_finance.yearly_goal.form</field>
-        <field name="model">bi_finance.yearly_goal</field>
-        <field name="arch" type="xml">
-            <form>
-                <header>
-                    <button  class="btn btn-primary"
-                             string="Livraison dans les délais"
-                             name="%(delivery_in_time_report)d"
-                             type="action"
-                    />
-                </header>
-                <sheet>
-                    <group string="Objectif annuel" col="12">
-                        <group string="Info" colspan="8">
-                            <field name="name"/>
-                            <field name="description"/>
-                        </group>
-                    </group>
-                    <notebook colspan="4">
-                        <page string="Objectif mensuel">
-                            <field name="monthly_goal_ids">
-                                <tree>
-                                    <field name="name"/>
-                                    <field name="month"/>
-                                    <field name="goal_percentage_in_time"/>
-                                    <field name="day_before_delivery"/>
-                                </tree>
-                            </field>
-                        </page>
-                    </notebook>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
         <!--==========View and Action objectif annuel===========-->
     <record model="ir.actions.act_window" id="yearly_goal_list_delivery_action">
-        <field name="name">Livraison dans les délais</field>
+        <field name="name">Livraison</field>
         <field name="res_model">bi_finance.yearly_goal</field>
-        <field name="view_mode">kanban,form</field>
+        <field name="view_mode">kanban</field>
             <field name="view_ids" eval="[(5, 0, 0),
-                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_yearly_delivery_kanban')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('year_delivery_form_view')})]"/>
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('view_yearly_delivery_kanban')})]"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Il n'y a pas d'objectif de livraison.

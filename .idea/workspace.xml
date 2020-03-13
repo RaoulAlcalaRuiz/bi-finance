@@ -2,20 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/request/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/sale_order.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/sale_order_forecast.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/sale_order_goal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/sale_order_ind.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/average_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/management_list.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/result_interpretation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/treatment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/classes/treatment_factory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/sale_order_provider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/sale_order_sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/sale_order_treatment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/date_delivery.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/date_delivery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/models/monthly_goal.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly_goal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/monthly_goal_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly_goal_employee.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reports_delivery_in_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports_delivery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reports_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports_employee.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/sale_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/sale_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sale_order.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/sql_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sql_request.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports_delivery_in_time.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_delivery.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_employee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/annualSales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/deliveryInTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/deliveryInTime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sale_order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/sale_order.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/monthly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/yearly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/yearly_goal_delivery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal_delivery.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583319671781</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Partial code organisation, Correction in part 2, Start part 3">
+      <created>1583405254856</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1583405254856</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -320,7 +345,8 @@
     <MESSAGE value="Fixed fail merge" />
     <MESSAGE value="Divide section + security (delivery, commercial, manager)" />
     <MESSAGE value="Date ind." />
-    <option name="LAST_COMMIT_MESSAGE" value="Date ind." />
+    <MESSAGE value="Partial code organisation, Correction in part 2, Start part 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partial code organisation, Correction in part 2, Start part 3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583237566536">
@@ -331,10 +357,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583156016961" />
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583319669111">
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583405252580">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583319669111" />
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583405252580" />
     <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1582802830560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -375,26 +401,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582730082521" />
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583319682402">
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583405261243">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583319682402" />
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583405261243" />
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582187707999" />
-    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1583396442316">
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1583913292342">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1583396442316" />
-    <state x="915" y="86" width="974" height="1047" key="dock-window-2" timestamp="1582808195372">
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1583913292342" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-2" timestamp="1583411442983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="915" y="86" width="974" height="1047" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1582808195372" />
-    <state x="953" y="0" width="974" height="1047" key="dock-window-3" timestamp="1582543263959">
+    <state x="953" y="0" width="974" height="1047" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1583411442983" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-3" timestamp="1583411442983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="953" y="0" width="974" height="1047" key="dock-window-3/0.0.1920.1040@0.0.1920.1040" timestamp="1582543263959" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-3/0.0.1920.1040@0.0.1920.1040" timestamp="1583411442983" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-4" timestamp="1582553181377">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

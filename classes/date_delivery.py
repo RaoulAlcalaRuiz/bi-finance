@@ -1,48 +1,57 @@
 from datetime import datetime, timedelta
 
 
-def compute_achievement(reality, goal):
+def compute_achievement_list(reality, goal):
     achievement_list = []
     index = 0
     while index < len(reality) :
-        if (reality[index] == 'null') | (goal[index] == 'null'):
-            achievement_list.append(True)
-        elif float(reality[index]) >= float(goal[index]):
-            achievement_list.append(True)
-        else:
-            achievement_list.append(False)
+        achievement_list.append(compute_achievement(reality[index],goal[index]))
         index += 1
     return achievement_list
 
+def compute_achievement(reality, goal):
+    if (reality == 'null') | (goal == 'null'):
+        return True
+    elif float(reality) >= float(goal):
+        return True
+    else:
+        return False
+
+def _value_null_in_futur( value, year, real_year, month, real_month):
+    year = int(year)
+    real_year = int(real_year)
+    month = int(month)
+    real_month = int(real_month)
+    if real_year < year:
+        return 'null'
+    elif real_year == year:
+        if real_month < month:
+            return 'null'
+        else:
+            return value
+    else:
+        return value
 
 class DateDelivery:
     def __init__(self, list, year):
         self._list = list
         self.year = int(year)
-        self.new_list = self._value_null_in_futur()
+        self.new_list = self._value_null_in_futur_list()
 
-    def _value_null_in_futur(self):
+    def _value_null_in_futur_list(self):
         today = datetime.today()
         today_month = int(today.month)
         today_year = int(today.year)
         new_list = []
         index = 1
         for value in self._list:
-            if today_year < self.year:
-                new_list.append('null')
-            elif today_year == self.year:
-                if today_month < index:
-                    new_list.append('null')
-                else:
-                    new_list.append(value)
-            else:
-                new_list.append(value)
+            new_list.append(_value_null_in_futur(value,self.year,today_year,index,today_month))
             index += 1
         return new_list
 
     def change_list(self,list):
         self._list = list
-        self.new_list = self._value_null_in_futur()
+        self.new_list = self._value_null_in_futur_list()
 
 class DateDeliveryOne:
     def __init__(self,commitment_date,effective_date,delta):

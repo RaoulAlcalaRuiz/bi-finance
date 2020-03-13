@@ -2,6 +2,7 @@ from odoo import models, api
 
 from .request.sale_order import get_sale_oders
 from .request.sale_order_goal import get_user_id_have_goal, get_goal_of_user, get_goal_sale_oders
+from .request.sale_order_provider import SaleOrderProvider
 from ..classes.average import AverageList, Average
 
 
@@ -41,7 +42,18 @@ class ReportGoal(models.AbstractModel):
         #employee_id
         employe_annual_sales = self._compute_goal_employee(yearly_goal.year)
 
+        #Test
+        provider2 = SaleOrderProvider(yearly_goal.year,self,"cumulative")
+        data_test2 = provider2.annual_sales()
+
+        #Test
+        provider = SaleOrderProvider(yearly_goal.year,self,"normal")
+        data_test = provider.annual_sales()
+
+
         docargs = {
+            'data_test': data_test,
+            'data_test2': data_test2,
             'year': yearly_goal.year,
             'real_annual_sales': real_annual_sales,
             'goal_annual_sales': goal_annual_sales,

@@ -32,7 +32,7 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'reports/reports.xml',
-        'reports/reports_delivery_in_time.xml',
+        'reports/reports_delivery.xml',
         'reports/reports_employee.xml',
         'views/yearly_goal.xml',
         'views/yearly_goal_delivery.xml',

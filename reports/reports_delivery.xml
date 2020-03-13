@@ -31,7 +31,7 @@
                                     <img src="\bi_finance\static\src\img\logo1.png" alt="logo aide décisionnelle" class="logo_report"/>
                                 </div>
                                 <br/>
-                                <h2 class="text-center">Rapport sur le délais des livraisons - Année <t t-esc="year"/></h2>
+                                <h2 class="text-center">Rapport Satisfaction client - Année <t t-esc="year"/></h2>
                             </div>
                         </div>
 
@@ -58,6 +58,32 @@
                                     </tbody>
                                 </table>
                             </figure>
+
+                            <p style="page-break-after:always;">   </p>
+
+                            <figure class="highcharts-figure mt-5">
+                                <br/>
+                                <h3 class="text-center ">Valeurs OQD mensuels</h3>
+                                <div id="delivery_quality" style="width:800px; height:600px; margin:auto auto;"></div>
+                                <p style="page-break-after:always;">   </p>
+                                <h3 class="text-center ">Valeurs OQD mensuels</h3>
+                                <table class="datatable">
+                                    <thead><tr><th>Mois</th><th>OQD mensuel</th><th>OQD cumulé</th><th>Objectif - OQD</th><th>Nbr de mauvaise qualité</th></tr></thead>
+                                    <tbody>
+                                        <t t-foreach="quality[0]" t-as="month">
+                                        <tr>
+                                            <th t-esc="month[0]"></th>
+                                            <t t-if="month[1][1]" ><td class="average-true" t-esc="month[1][0]"></td></t>
+                                            <t t-else="" ><td class="average-false" t-esc="month[1][0]"></td></t>
+                                            <td t-esc="month[2]"></td>
+                                            <td t-esc="month[3]"></td>
+                                            <td t-esc="month[4]"></td>
+                                        </tr>
+                                        </t>
+
+                                    </tbody>
+                                </table>
+                            </figure>
                         </div>
 
                         <br/>
@@ -70,6 +96,19 @@
                                         <td t-esc="list_in_time[index]"></td>
                                         <td t-esc="list_in_time_accrued[index]"></td>
                                         <td t-esc="percent_wanted[index]"></td>
+                                    </tr>
+                                 </t>
+                            </tbody>
+                        </table>
+                        <table id="quality" style="visibility:hidden;  position: absolute;" >
+                            <thead><tr><th>Mois</th><th>OQD mensuel</th><th>OQD cumulé</th><th>Objectif - OQD</th></tr></thead>
+                            <tbody>
+                                 <t t-foreach="quality[1]" t-as="month">
+                                    <tr>
+                                        <th t-esc="month[0]"></th>
+                                        <td t-esc="month[1]"></td>
+                                        <td t-esc="month[2]"></td>
+                                        <td t-esc="month[3]"></td>
                                     </tr>
                                  </t>
                             </tbody>

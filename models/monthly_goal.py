@@ -8,8 +8,9 @@ class monthlyGoal(models.Model):
     name = fields.Char(string="Titre", compute='_compute_name')
     month = fields.Selection(selection='_month', string='Mois', required=True)
 
-    goal_percentage_in_time = fields.Percent(string="Pourcentage",required=True,help="Pourcentage de livraison à temps", default=0)
+    goal_percentage_in_time = fields.Percent(string="Pourcentage",required=True,help="Objectif du nombre de livraison livrée à temps (en %)", default=0)
     day_before_delivery = fields.Integer(string="Delai d'avance",required=True,help="Delai d'avance sur la livraison (jour)", default=5)
+    quality = fields.Percent(string="Qualité",required=True,help="Objectif du nombre des produits livrés sans problème de qualité (en %)", default=0)
 
     currency_id = fields.Many2one(
         'res.currency', string='Currency')

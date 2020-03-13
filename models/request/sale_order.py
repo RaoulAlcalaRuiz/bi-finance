@@ -9,7 +9,6 @@ def get_sale_oders(self, year_goal, month_goal):
                 "And a.state = 'posted' "+
                 "GROUP BY Year,Month ")
     self.env.cr.execute(request)
-    
     return self.env.cr.fetchall()
 
 def get_sale_oders_user(self, year_goal, month_goal,user_id):

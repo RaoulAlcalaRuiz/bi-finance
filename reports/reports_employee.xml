@@ -46,9 +46,9 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>Réalité</th>
-                                            <th>Objectif</th>
-                                            <th>% réalisé</th>
+                                            <th>Résultats</th>
+                                            <th>Objectifs</th>
+                                            <th>% Accompli</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -85,9 +85,9 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>Réalité</th>
-                                            <th>Objectif</th>
-                                            <th>% réalisé</th>
+                                            <th>Résultats</th>
+                                            <th>Objectifs</th>
+                                            <th>% Accompli</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -123,9 +123,9 @@
                                     <thead>
                                         <tr>
                                             <th></th>
+                                            <th>Objectifs</th>
                                             <th>Résultats</th>
                                             <th>Prévisions</th>
-                                            <th>Objectif</th>
                                             <th>% Prévisonnel</th>
                                             <th>Différence</th>
                                         </tr>
@@ -134,9 +134,9 @@
                                          <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                             <tr>
                                                 <th t-esc="index + 1"></th>
+                                                <td t-esc="employe_goal_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                                 <td t-esc="employe_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                                 <td t-esc="employe_annual_sales_forecast[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
-                                                <td t-esc="employe_goal_annual_sales[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                                 <t t-if="employe_average_forecast_goal[index][1]"><td class="average-true"><t t-esc="employe_average_forecast_goal[index][0]"></t></td></t>
                                                 <t t-else=""><td class="average-false"><t t-esc="employe_average_forecast_goal[index][0]"></t></td></t>
                                                 <td t-esc="employe_difference_forecast_real[index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
@@ -146,9 +146,9 @@
                                     <tfoot id="footer-table">
                                         <tr>
                                             <th>Total annuel</th>
+                                            <td t-esc="sum_employe_annual_sales_forecast[2]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                             <td t-esc="sum_employe_annual_sales_forecast[0]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                             <td t-esc="sum_employe_annual_sales_forecast[1]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
-                                            <td t-esc="sum_employe_annual_sales_forecast[2]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                             <t t-if="sum_employe_annual_sales_forecast[4]"><td class="average-true"><t t-esc="sum_employe_annual_sales_forecast[3]"></t></td></t>
                                             <t t-else=""><td class="average-false"><t t-esc="sum_employe_annual_sales_forecast[3]"></t></td></t>
                                             <td t-esc="sum_employe_annual_sales_forecast[5]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>

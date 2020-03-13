@@ -35,7 +35,7 @@ Highcharts.chart('area-annual-sales', {
         }
     },
     series: [{
-        name: 'Réalité',
+        name: 'Résultats',
         color: '#2748ab'},
         {
         name: 'Objectif',
@@ -64,10 +64,10 @@ Highcharts.chart('bar-annual-sales', {
         pointFormat: '{series.name} \: <b>{point.y:,.0f}</b>'
     },
     series: [{
-        name: 'Réalité',
+        name: 'Résultats',
         color: '#2748ab'},
         {
-        name: 'Objectif',
+        name: 'Objectifs',
         color: '#5e8fbd'
         }]
 });

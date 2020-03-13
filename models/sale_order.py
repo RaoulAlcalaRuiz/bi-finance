@@ -13,6 +13,7 @@ class Order(models.Model):
     is_late = fields.Boolean(string="Retard",compute="_delivering_late", help="État de la livraison. Si la case est cochée, la livraison est en retard. Si la case n'est pas cochée, la livraison est arrivée à temps ou la livraison n'a pas encore eu lieu mais à de l'avance ")
 
     problematic_quality = fields.Boolean(string="Qualité problématique",
+                                         default=False,
                                          help="Qualité du produit livré. Peut être cochée uniquement si la livraison est considérée envoyée.")
     justification_quality = fields.Char(
         String="Justification de qualité",

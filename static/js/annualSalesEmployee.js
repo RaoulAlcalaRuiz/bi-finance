@@ -19,7 +19,7 @@ Highcharts.chart('area-annual-sales', {
         pointFormat: '{series.name} \: <b>{point.y:,.0f}</b>'
     },
     series: [{
-        name: 'Réalité',
+        name: 'Résultats',
         color: '#2748ab'},
         {
         name: 'Objectif',
@@ -48,7 +48,7 @@ Highcharts.chart('bar-annual-sales', {
         pointFormat: '{series.name} \: <b>{point.y:,.0f}</b>'
     },
     series: [{
-        name: 'Réalité',
+        name: 'Résultats',
         color: '#2748ab'},
         {
         name: 'Objectif',
@@ -85,7 +85,7 @@ Highcharts.chart('bar-annual-sales-forecast', {
         pointFormat: '{series.name} \: <b>{point.y:,.0f}</b>'
     },
     series: [{
-        name: 'Réalité',
+        name: 'Résultats',
         color: '#2748ab',
         pointPadding: 0,
         pointPlacement: 0

@@ -19,7 +19,6 @@ class ReportGoalEmployee(models.AbstractModel):
         name_user = _get_name_user(self,current_uid)
 
         # Résultat
-            # TODO modifier la requête du réel chiffres d'affaires
             #normal
         employe_goal_annual_sales = _compute_goal(self, yearly_goal.year, current_uid)
         employe_annual_sales = _compute_annual_sales(self, yearly_goal.year, current_uid)

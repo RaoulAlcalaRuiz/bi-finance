@@ -63,9 +63,12 @@
                                 </field>
                             </page>
                             <page string="Satisfaction client">
-                                <group colspan="2" col="2">
+                                <group colspan="2" col="2" string="Délais">
                                     <field name="goal_percentage_in_time" class="mb-3"/>
                                     <field name="day_before_delivery" class="mb-3"/>
+                                </group>
+                                <group colspan="2" col="2" string="Qualité">
+                                    <field name="quality" class="mb-3"/>
                                 </group>
                             </page>
                         </notebook>

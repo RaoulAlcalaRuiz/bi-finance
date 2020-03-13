@@ -32,6 +32,6 @@
     <menuitem id="satisfaction_bi_menu" name="Satisfaction client" parent="main_bi_finance_menu"
         groups="group_livraison"/>
 
-    <menuitem id="delivery_in_time" name="Livraison dans les délais" parent="satisfaction_bi_menu"
+    <menuitem id="delivery_in_time" name="Livraison" parent="satisfaction_bi_menu"
         action="yearly_goal_list_delivery_action"/>
 </odoo>

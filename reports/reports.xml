@@ -53,9 +53,9 @@
                                         <thead>
                                             <tr>
                                                 <th></th>
-                                                <th>Réalité</th>
-                                                <th>Objectif</th>
-                                                <th>% réalisé</th>
+                                                <th>Résultats</th>
+                                                <th>Objectifs</th>
+                                                <th>% Accompli</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -80,6 +80,38 @@
                                             </tr>
                                         </tfoot>
                                     </table>
+                                    <table class="datatable" >
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Résultats</th>
+                                                <th>Objectifs</th>
+                                                <th>% Accompli</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                             <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                                <tr>
+                                                    <th t-esc="data_test2[0][index]"></th>
+                                                    <td t-if="data_test2[1][index] != 'null'" t-esc="data_test2[1][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                    <td t-else="" t-esc="zero_value" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                    <td t-esc="data_test2[2][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                    <t t-if="data_test2[3][index][1]"><td class="average-true"><t t-esc="data_test2[3][index][0]"></t></td></t>
+                                                    <t t-else=""><td class="average-false"><t t-esc="data_test2[3][index][0]"></t></td></t>
+                                                </tr>
+                                             </t>
+                                        </tbody>
+                                        <tfoot id="footer-table">
+                                            <tr>
+                                                <th>Total annuel</th>
+                                                <td t-esc="data_test2[4][0]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-esc="data_test2[4][1]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <t t-if="data_test2[4][2][1]"><td class="average-true"><t t-esc="data_test2[4][2][0]"></t></td></t>
+                                                <t t-else=""><td class="average-false"><t t-esc="data_test2[4][2][0]"></t></td></t>
+
+                                            </tr>
+                                        </tfoot>
+                                    </table>
                             </figure>
                         <p style="page-break-after:always;">   </p>
                         <figure class="highcharts-figure mt-5">
@@ -91,9 +123,9 @@
                                     <thead>
                                         <tr>
                                             <th></th>
-                                            <th>Réalité</th>
-                                            <th>Objectif</th>
-                                            <th>% réalisé</th>
+                                            <th>Résultats</th>
+                                            <th>Objectifs</th>
+                                            <th>% Accompli</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -119,14 +151,45 @@
                                         </tr>
                                     </tfoot>
                                 </table>
+                                 <table class="datatable" >
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Résultats</th>
+                                            <th>Objectifs</th>
+                                            <th>% Accompli</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                         <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                            <tr>
+                                                <th t-esc="data_test[0][index]"></th>
+                                                <td t-if="data_test[1][index] != 'null'" t-esc="data_test[1][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-else="" t-esc="zero_value" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-esc="data_test[2][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <t t-if="data_test[3][index][1]"><td class="average-true"><t t-esc="data_test[3][index][0]"></t></td></t>
+                                                <t t-else=""><td class="average-false"><t t-esc="data_test[3][index][0]"></t></td></t>
+                                            </tr>
+                                         </t>
+                                    </tbody>
+                                    <tfoot id="footer-table">
+                                        <tr>
+                                            <th>Total annuel</th>
+                                            <td t-esc="data_test[4][0]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <td t-esc="data_test[4][1]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <t t-if="data_test[4][2][1]"><td class="average-true"><t t-esc="data_test[4][2][0]"></t></td></t>
+                                            <t t-else=""><td class="average-false"><t t-esc="data_test[4][2][0]"></t></td></t>
 
+                                        </tr>
+                                    </tfoot>
+                                </table>
                         </figure>
                         <p style="page-break-after:always;">   </p>
                         <figure class="highcharts-figure mt-5">
-                            <h3 class="text-center ">Objectif mensuels des employés</h3>
+                            <h3 class="text-center ">Objectifs mensuels des employés</h3>
                             <div id="bar-employee-annual-sales" style="width:800px; height:600px; margin:auto auto;"></div>
                             <p style="page-break-after:always;">   </p>
-                            <h3 class="text-center ">Objectif mensuels des employés</h3>
+                            <h3 class="text-center ">Objectifs mensuels des employés</h3>
                             <table class="datatable datatable-without-end">
                                 <thead>
                                     <tr>
@@ -198,6 +261,7 @@
                                 </tbody>
                             </table>
                     </body>
+
                 <!--========ALL import JS sources=======-->
                 <script type="text/javascript" src="/bi_finance/static/js/annualSales.js"/>
 <!--                 <script type="text/javascript" src="/bi_finance/static/js/header.js"/>-->

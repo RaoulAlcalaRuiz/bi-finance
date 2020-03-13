@@ -70,7 +70,7 @@
             <form>
                 <header>
                     <button  class="btn btn-primary"
-                             string="Livraison dans les délais"
+                             string="Livraison"
                              name="%(delivery_in_time_report)d"
                              type="action"
                     />
