@@ -2,38 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/average_list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/management_list.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/result_interpretation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/treatment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/classes/treatment_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/sale_order_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/sale_order_sql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/sale_order_treatment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/date_delivery.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/date_delivery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/management_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/management_list.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/monthly_goal.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly_goal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/reports_delivery_in_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports_delivery.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/reports_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports_employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/sale_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sale_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/sale_order_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/sale_order_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/sale_order_treatment.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order_treatment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/reports.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports_delivery_in_time.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_delivery.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/reports_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_employee.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/annualSales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/deliveryInTime.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/deliveryInTime.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/monthly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/yearly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/yearly_goal_delivery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal_delivery.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -319,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583405254856</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Partial code reorganization">
+      <created>1584088496871</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1584088496871</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -346,7 +339,8 @@
     <MESSAGE value="Divide section + security (delivery, commercial, manager)" />
     <MESSAGE value="Date ind." />
     <MESSAGE value="Partial code organisation, Correction in part 2, Start part 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Partial code organisation, Correction in part 2, Start part 3" />
+    <MESSAGE value="Partial code reorganization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Partial code reorganization" />
   </component>
   <component name="WindowStateProjectService">
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583237566536">
@@ -357,10 +351,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583156016961" />
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1583405252580">
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1584350310772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1583405252580" />
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584350310772" />
     <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1582802830560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -401,10 +395,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582730082521" />
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1583405261243">
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1584088510467">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1583405261243" />
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584088510467" />
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
