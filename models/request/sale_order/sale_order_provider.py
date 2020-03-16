@@ -1,7 +1,7 @@
-from ...classes.management_list import ManagementList
-from ...classes.average import Average
-from ...classes.average_list import AverageList
-from ..request.sale_order_treatment import SaleOrderTreatment
+from ....classes.management_list import ManagementList
+from ....classes.average import Average
+from ....classes.average_list import AverageList
+from ....models.request.sale_order.sale_order_treatment import SaleOrderTreatment
 
 
 class SaleOrderProvider:
@@ -25,7 +25,6 @@ class SaleOrderProvider:
     def annual_goal_employee(self):
         return self._factory.annual_sales_goal_employee()
 
-    # TODO compute résultats, Prévision et la différence.
     def annual_forecast(self):
         sales = self._factory.annual_sales()
         goal = self._factory.annual_sales_goal()

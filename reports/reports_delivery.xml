@@ -48,11 +48,11 @@
                                     <tbody>
                                          <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                             <tr>
-                                                <th t-esc="index + 1"></th>
-                                                <t t-if="goal_achieved[index]" ><td class="average-true" t-esc="list_in_time_formated[index]"></td></t>
-                                                <t t-else="" ><td class="average-false" t-esc="list_in_time_formated[index]"></td></t>
-                                                <td t-esc="list_in_time_accrued_formated[index]"></td>
-                                                <td t-esc="percent_wanted_formated[index]"></td>
+                                                <th t-esc="delivery_in_time_formated[0][index]"></th>
+                                                <t t-if="delivery_in_time_formated[1][1][index]" ><td class="average-true" t-esc="delivery_in_time_formated[1][0][index]"></td></t>
+                                                <t t-else="" ><td class="average-false" t-esc="delivery_in_time_formated[1][0][index]"></td></t>
+                                                <td t-esc="delivery_in_time_formated[2][index]"></td>
+                                                <td t-esc="delivery_in_time_formated[3][index]"></td>
                                             </tr>
                                          </t>
                                     </tbody>
@@ -68,17 +68,16 @@
                                 <p style="page-break-after:always;">   </p>
                                 <h3 class="text-center ">Valeurs OQD mensuels</h3>
                                 <table class="datatable">
-                                    <thead><tr><th>Mois</th><th>OQD mensuel</th><th>OQD cumulé</th><th>Objectif - OQD</th><th>Nbr de mauvaise qualité</th></tr></thead>
+                                    <thead><tr><th>Mois</th><th>OQD mensuel</th><th>OQD cumulé</th><th>Objectif - OQD</th></tr></thead>
                                     <tbody>
-                                        <t t-foreach="quality[0]" t-as="month">
-                                        <tr>
-                                            <th t-esc="month[0]"></th>
-                                            <t t-if="month[1][1]" ><td class="average-true" t-esc="month[1][0]"></td></t>
-                                            <t t-else="" ><td class="average-false" t-esc="month[1][0]"></td></t>
-                                            <td t-esc="month[2]"></td>
-                                            <td t-esc="month[3]"></td>
-                                            <td t-esc="month[4]"></td>
-                                        </tr>
+                                        <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                            <tr>
+                                                    <th t-esc="quality_delivery_formated[0][index]"></th>
+                                                    <t t-if="quality_delivery_formated[1][1][index]" ><td class="average-true" t-esc="quality_delivery_formated[1][0][index]"></td></t>
+                                                    <t t-else="" ><td class="average-false" t-esc="quality_delivery_formated[1][0][index]"></td></t>
+                                                    <td t-esc="quality_delivery_formated[2][index]"></td>
+                                                    <td t-esc="quality_delivery_formated[3][index]"></td>
+                                            </tr>
                                         </t>
 
                                     </tbody>
@@ -92,10 +91,10 @@
                             <tbody>
                                  <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                     <tr>
-                                        <th t-esc="index + 1"></th>
-                                        <td t-esc="list_in_time[index]"></td>
-                                        <td t-esc="list_in_time_accrued[index]"></td>
-                                        <td t-esc="percent_wanted[index]"></td>
+                                        <th t-esc="delivery_in_time[0][index]"></th>
+                                        <td t-esc="delivery_in_time[1][index]"></td>
+                                        <td t-esc="delivery_in_time[2][index]"></td>
+                                        <td t-esc="delivery_in_time[3][index]"></td>
                                     </tr>
                                  </t>
                             </tbody>
@@ -103,12 +102,12 @@
                         <table id="quality" style="visibility:hidden;  position: absolute;" >
                             <thead><tr><th>Mois</th><th>OQD mensuel</th><th>OQD cumulé</th><th>Objectif - OQD</th></tr></thead>
                             <tbody>
-                                 <t t-foreach="quality[1]" t-as="month">
+                                 <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                     <tr>
-                                        <th t-esc="month[0]"></th>
-                                        <td t-esc="month[1]"></td>
-                                        <td t-esc="month[2]"></td>
-                                        <td t-esc="month[3]"></td>
+                                        <th t-esc="quality_delivery[0][index]"></th>
+                                        <td t-esc="quality_delivery[1][index]"></td>
+                                        <td t-esc="quality_delivery[2][index]"></td>
+                                        <td t-esc="quality_delivery[3][index]"></td>
                                     </tr>
                                  </t>
                             </tbody>

@@ -1,6 +1,6 @@
-from ...classes.treatment_factory import TreatmentFactory
-from ...classes.result_interpretation import ResultInterpretationZero
-from ..request.sale_order_sql import SaleOrderSql
+from ....classes.treatment_factory import TreatmentFactory
+from ....classes.result_interpretation import ResultInterpretationZero
+from ....models.request.sale_order.sale_order_sql import SaleOrderSql
 
 
 class SaleOrderTreatment :

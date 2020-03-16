@@ -1,9 +1,7 @@
 from odoo import models, api
 
-from .request.sale_order_provider import SaleOrderProvider
-from .sql_request import _get_name_user, _compute_goal, _compute_annual_sales, _compute_sum_data, \
-    _compute_annual_sales_forecast, _compute_average, _get_sale_oders_ind
-from ..classes.average import AverageList, Average
+from ..request.sale_order.sale_order_provider import SaleOrderProvider
+from ...models.sql_request import _get_name_user
 
 
 class ReportGoalEmployee(models.AbstractModel):

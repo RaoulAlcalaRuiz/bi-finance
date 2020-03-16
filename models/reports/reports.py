@@ -1,9 +1,6 @@
 from odoo import models, api
 
-from .request.sale_order import get_sale_oders
-from .request.sale_order_goal import get_user_id_have_goal, get_goal_of_user, get_goal_sale_oders
-from .request.sale_order_provider import SaleOrderProvider
-from ..classes.average import AverageList, Average
+from ..request.sale_order.sale_order_provider import SaleOrderProvider
 
 
 class ReportGoal(models.AbstractModel):
