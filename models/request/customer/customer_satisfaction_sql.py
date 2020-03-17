@@ -62,9 +62,37 @@ class CustomerSatisfactionSql:
         month_formatted = "{:02d}".format(self._month)
         request = ("select COUNT(s.problematic_quality) as Good " +
                    "From sale_order s  " +
-                   "WHERE TO_CHAR(s.commitment_date, 'YYYY MM') = '" + str(self._year) + " " + str(month_formatted) + "' " +
-                   "AND s.effective_date is not NULL " +
+                   "WHERE TO_CHAR(s.effective_date, 'YYYY MM') = '" + str(self._year) + " " + str(month_formatted) + "' " +
                    "AND s.problematic_quality = '" + bad_quality + "' " +
                    "AND s.state = 'sale' ")
         self._odoo.env.cr.execute(request)
         return self._odoo.env.cr.fetchall()
+
+
+# "select o.name, date_part('day',age(
+# (select max(date_done)
+# from sale_order ss
+# join stock_picking ssp on ssp.origin = ss.name
+# where ss.name = o.name)
+# 	, o.commitment_date))
+#
+# From sale_order o
+# JOIN res_company c on c.id = o.company_id
+# WHERE TO_CHAR(o.commitment_date,'YYYY') = '2020'
+# AND CAST (TO_CHAR(o.commitment_date,'MM') AS INTEGER) = '03'
+# AND o.state = 'sale'
+# AND c.id = '1'
+# AND date_part('day',age(o.commitment_date,
+# (select max(date_done)
+# from sale_order ss
+# join stock_picking ssp on ssp.origin = ss.name
+# where ss.name = o.name))) > -5
+# AND (select COUNT(ssp.state)
+# 	from sale_order ss
+# 	join stock_picking ssp on ssp.origin = ss.name
+# 	where ss.name = o.name)
+# 	=
+# 	(select COUNT(ssp.state)
+# 	from sale_order ss
+# 	join stock_picking ssp on ssp.origin = ss.name
+# 	where ss.name = o.name and ssp.state = 'done') "

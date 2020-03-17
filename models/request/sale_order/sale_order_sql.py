@@ -12,15 +12,26 @@ class SaleOrderSql:
         if str(user_id) != "all":
             condition = "And s.user_id = '" + str(user_id) + "'"
 
-        request = ("select SUM(s.amount_untaxed), TO_CHAR(s.commitment_date, 'YYYY') AS Year, " +
-                   "TO_CHAR(s.commitment_date, 'MM') AS Month " +
-                   "From sale_order s " +
-                   "Join account_move a on a.invoice_origin = s.name " +
-                   "WHERE TO_CHAR(s.commitment_date, 'YYYY MM') = '" + self._year + " " + self._month + "' " +
-                   "AND s.state = 'sale' " +
-                   "And a.state = 'posted' " +
-                   condition +
-                   "GROUP BY Year,Month ")
+        request = ("select SUM(s.amount_untaxed) "+
+                    "From sale_order s "+
+                    "Join account_move a on a.invoice_origin = s.name "+
+                    "WHERE (select TO_CHAR(max(date_done), 'YYYY MM') "+
+                    "		from sale_order ss "+
+                    "		join stock_picking ssp on ssp.origin = ss.name "+
+                    "		where ss.name = s.name) = '" + self._year + " " + self._month + "' "+
+                    "AND (select COUNT(ssp.state) "+
+                    "	from sale_order ss "+
+                    "	join stock_picking ssp on ssp.origin = ss.name "+
+                    "	where ss.name = s.name) "+
+                    "	= "+
+                    "	(select COUNT(ssp.state) "+
+                    "	from sale_order ss "+
+                    "	join stock_picking ssp on ssp.origin = ss.name "+
+                    "	where ss.name = s.name and ssp.state = 'done') "+
+                    "AND s.state = 'sale' "+
+                    condition +
+                    "And a.state = 'posted' "+
+                    "group by s.state")
         self._odoo.env.cr.execute(request)
         return self._odoo.env.cr.fetchall()
 

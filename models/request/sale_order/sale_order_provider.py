@@ -3,7 +3,6 @@ from ....classes.average import Average
 from ....classes.average_list import AverageList
 from ....models.request.sale_order.sale_order_treatment import SaleOrderTreatment
 
-
 class SaleOrderProvider:
     MONTHS = [1,2,3,4,5,6,7,8,9,10,11,12]
 

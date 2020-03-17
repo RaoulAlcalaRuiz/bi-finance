@@ -2,28 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/reports/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/customer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_sql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_treatment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/sale_order/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/average.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/average.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports/reports.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/reports_delivery.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports/reports_delivery.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/reports_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports/reports_employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order_forecast.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order_goal.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order_ind.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order/sale_order_provider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order/sale_order_sql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order_treatment.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order/sale_order_treatment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/sql_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sql_request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports_delivery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_delivery.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/sale_order/sale_order_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order/sale_order_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/sale_order/sale_order_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order/sale_order_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/monthly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/yearly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584350337434</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Reorganization delivery report">
+      <created>1584365164346</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1584365164346</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -352,7 +350,8 @@
     <MESSAGE value="Partial code organisation, Correction in part 2, Start part 3" />
     <MESSAGE value="Partial code reorganization" />
     <MESSAGE value="Reorganization Employee Report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reorganization Employee Report" />
+    <MESSAGE value="Reorganization delivery report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reorganization delivery report" />
   </component>
   <component name="WindowStateProjectService">
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583237566536">
@@ -363,10 +362,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584363236735" />
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1584350334966">
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2" timestamp="1584365161975">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584350334966" />
+    <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584365161975" />
     <state x="260" y="282" key="FileChooserDialogImpl" timestamp="1582802830560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -407,10 +406,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582730082521" />
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1584350358013">
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2" timestamp="1584365175722">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584350358013" />
+    <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584365175722" />
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
