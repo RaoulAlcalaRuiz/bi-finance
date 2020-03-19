@@ -34,6 +34,7 @@
         'reports/reports.xml',
         'reports/reports_delivery.xml',
         'reports/reports_employee.xml',
+        'reports/reports_stock.xml',
         'views/yearly_goal.xml',
         'views/yearly_goal_delivery.xml',
         'views/yearly_goal_employee.xml',

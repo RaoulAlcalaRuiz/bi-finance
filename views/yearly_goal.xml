@@ -70,13 +70,18 @@
             <form>
                 <header>
                     <button  class="btn btn-primary"
-                             string="Livraison"
+                             string="Satisfaction Client"
                              name="%(delivery_in_time_report)d"
                              type="action"
                     />
                     <button  class="btn btn-primary"
                              string="Chiffres d'affaires"
                              name="%(ca_report)d"
+                             type="action"
+                    />
+                    <button  class="btn btn-primary"
+                             string="Stock"
+                             name="%(stock_report)d"
                              type="action"
                     />
                 </header>

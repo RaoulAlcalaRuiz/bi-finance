@@ -71,6 +71,11 @@
                                     <field name="quality" class="mb-3"/>
                                 </group>
                             </page>
+                            <page string="Stock">
+                                <group colspan="2" col="2">
+                                    <field name="stock" class="mb-3"/>
+                                </group>
+                            </page>
                         </notebook>
                     </group>
                 </sheet>

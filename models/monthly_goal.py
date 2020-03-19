@@ -15,6 +15,7 @@ class monthlyGoal(models.Model):
     currency_id = fields.Many2one(
         'res.currency', string='Currency')
     goal = fields.Monetary(string="Objectif du mois", compute='_goal_compute')
+    stock = fields.Monetary(string="Stock")
 
     yearly_goal_id = fields.Many2one('bi_finance.yearly_goal',
                                      ondelete='cascade', string="Objectif annuel", required=True)

@@ -34,14 +34,7 @@
                             <h2 class="text-center">Chiffres d'affaires - Année <t t-esc="year"/></h2>
                         </div>
                     </div>
-                            <!--<ul class="nav nav-bar-report">
-                                <li class="nav-item">
-                                    <button type="button" class="btn btn-primary">Chiffre d'affaires</button>
-                                    <button type="button" class="btn btn-outline-primary">Satisfaction client</button>
-                                    <button type="button" class="btn btn-outline-primary">Valeur du stock</button>
-                                    <button type="button" class="btn btn-outline-primary">EBITDA</button>
-                                </li>
-                            </ul>-->
+
                         <!--===========Annual Sales===========-->
                     <div class="page">
                             <figure class="highcharts-figure">
@@ -204,4 +197,5 @@
             </t>
         </t>
     </template>
+
 </odoo>
