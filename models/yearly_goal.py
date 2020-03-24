@@ -21,12 +21,6 @@ class yearlyGoal(models.Model):
     monthly_goal_ids = fields.One2many(
         'bi_finance.monthly_goal', 'yearly_goal_id', string="Objectif mensuels")
 
-    _sql_constraints = [
-        ('year_unique',
-         'UNIQUE(year)',
-         "Vous ne pouvez pas créer plusieurs objectifs la même année")
-    ]
-
     @api.depends('goal', 'monthly_goal_ids')
     def _goal_compute_year(self):
         for r in self:

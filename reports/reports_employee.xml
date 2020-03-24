@@ -6,7 +6,7 @@
         name="bi_finance.report_ca_employee_template"
         file="bi_finance.report_ca_employee_template"
         report_type="qweb-html"
-        menu="True"
+        menu="False"
         groups="group_commercial"
     />
 

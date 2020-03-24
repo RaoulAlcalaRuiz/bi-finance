@@ -49,8 +49,9 @@
         <xpath expr="//search" position="inside">
           <!-- This field will show up on the default filters
                &lt; is the XML encoding for < and &gt; is the XML encoding for > -->
-          <filter string="Livraison en retard" name="delivery_is_late" domain="[('delivery_late', '=', -1)]"/>
-          <filter string="Livraison livrée à temps" name="delivery_on_time" domain="[('delivery_late','=','1')]"/>
+          <filter string="Livraison en retard" name="delivery_is_late" domain="[('is_late', '=', True)]"/>
+          <filter string="livraison avec qualité respecté" name="good_quality" domain="[('problematic_quality', '=', False)]"/>
+          <filter string="livraison avec qualité non-respecté" name="good_quality" domain="[('problematic_quality', '=', True)]"/>
         </xpath>
       </field>
     </record>

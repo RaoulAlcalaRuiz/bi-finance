@@ -84,6 +84,11 @@
                              name="%(stock_report)d"
                              type="action"
                     />
+                    <button  class="btn btn-primary"
+                             string="EBITDA"
+                             name="%(ebitda_report)d"
+                             type="action"
+                    />
                 </header>
                 <sheet>
                     <group string="Objectif annuel" col="12">

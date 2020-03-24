@@ -1,16 +1,16 @@
 <odoo>
     <report
-        id="stock_report"
+        id="ebitda_report"
         model="bi_finance.yearly_goal"
-        string="Stock Report"
-        name="bi_finance.stock_report_template"
-        file="bi_finance.stock_report_template"
+        string="Ebitda Report"
+        name="bi_finance.ebitda_report_template"
+        file="bi_finance.ebitda_report_template"
         report_type="qweb-html"
         menu="False"
         groups="group_manager"
     />
 
-    <template id="stock_report_template">
+    <template id="ebitda_report_template">
         <t t-call="web.html_container">
              <t t-call="web.basic_layout">
                     <head>
@@ -31,50 +31,58 @@
                                     <img src="\bi_finance\static\src\img\logo1.png" alt="logo aide décisionnelle" class="logo_report"/>
                                 </div>
                                 <br/>
-                                <h2 class="text-center">Rapport Stock - Année <t t-esc="year"/></h2>
+                                <h2 class="text-center">Rapport EBITDA - Année <t t-esc="year"/></h2>
                             </div>
                         </div>
-
+                        <t t-esc="goal"/>
                         <div class="page">
 
                             <figure class="highcharts-figure mt-5">
                                 <br/>
                                 <h3 class="text-center ">Stock Mensuel</h3>
-                                <div id="stock_chart" style="width:800px; height:600px; margin:auto auto;"></div>
+                                <div id="ebitda_chart" style="width:800px; height:600px; margin:auto auto;"></div>
                                 <p style="page-break-after:always;">   </p>
                                 <h3 class="text-center ">Stock Mensuel</h3>
                                 <table class="datatable">
-                                    <thead><tr><th>mois</th><th>stock - actuel</th><th>stock - objectif</th></tr></thead>
+                                    <thead><tr><th>mois</th><th>Ebitda - Budget par mois</th><th>Ebitda - cumulé (Budget)</th></tr></thead>
                                     <tbody>
                                          <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                             <tr>
-                                                <th t-esc="stock[0][index]"></th>
-                                                <td t-if="stock[1][index] != 'null'" t-esc="stock[1][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <th t-esc="ebitda[0][index]"></th>
+                                                <td t-if="ebitda[1][index] != 'null'" t-esc="ebitda[1][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                                 <t t-else=""><td> - </td></t>
-                                                <td t-esc="stock[2][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-if="ebitda[2][index] != 'null'" t-esc="ebitda[2][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <t t-else=""><td> - </td></t>
                                             </tr>
                                          </t>
                                     </tbody>
+                                    <tfoot id="footer-table">
+                                        <tr>
+                                            <th>Total annuel</th>
+                                            <td t-esc="ebitda[3]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                            <td t-esc="ebitda[3]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </figure>
                         </div>
 
                         <br/>
-                        <table id="stock-data" style="visibility:hidden;  position: absolute;">
-                            <thead><tr><th></th><th>stock - actuel</th><th>stock - objectif</th></tr></thead>
+                        <table id="ebitda-data" style="visibility:hidden;  position: absolute;">
+                            <thead><tr><th></th><th>Ebitda - Budget par mois</th><th>Ebitda - cumulé (Budget)</th></tr></thead>
                             <tbody>
                                  <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
                                     <tr>
-                                        <th t-esc="stock[0][index]"></th>
-                                        <th t-esc="stock[1][index]"></th>
-                                        <td t-esc="stock[2][index]"></td>
+                                        <th t-esc="ebitda[0][index]"></th>
+                                        <th t-esc="ebitda[1][index]"></th>
+                                        <td t-esc="ebitda[2][index]"></td>
                                     </tr>
                                  </t>
                             </tbody>
                         </table>
                     </body>
                 <!--========ALL import JS sources=======-->
-                <script type="text/javascript" src="/bi_finance/static/js/stock.js"/>
+                <script type="text/javascript" src="/bi_finance/static/js/ebitda.js"/>
             </t>
         </t>
     </template>

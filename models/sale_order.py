@@ -5,12 +5,22 @@ from ..classes.date_delivery import DateDeliveryOne
 class Order(models.Model):
     _inherit = 'sale.order'
 
+    # Date de livraison prévue => overide pour qui soit modifiable même en bon de commande
+    commitment_date = fields.Datetime('Delivery Date',
+                                      states={'draft': [('readonly', False)],
+                                              'sent': [('readonly', False)],
+                                              'sale': [('readonly', False)]}
+                                      )
+
     justification_for_delay = fields.Char(
         string="Justification de retard",
         help="Justification de retard. Peut être complété uniquement si la livraison est en retard." )
 
     delivery_late = fields.Integer(string="Etat de livraison",compute="_delivering_state")
-    is_late = fields.Boolean(string="Retard",compute="_delivering_late", help="État de la livraison. Si la case est cochée, la livraison est en retard. Si la case n'est pas cochée, la livraison est arrivée à temps ou la livraison n'a pas encore eu lieu mais à de l'avance ")
+    is_late = fields.Boolean(string="Retard",
+                             compute="_delivering_late",
+                             store=True,
+                             help="État de la livraison. Si la case est cochée, la livraison est en retard. Si la case n'est pas cochée, la livraison est arrivée à temps ou la livraison n'a pas encore eu lieu mais à de l'avance ")
 
     problematic_quality = fields.Boolean(string="Qualité problématique",
                                          default=False,
@@ -26,8 +36,8 @@ class Order(models.Model):
             delta = 0
             if r.commitment_date:
                 delta = self._get_day_before_delivering(r.commitment_date.year, r.commitment_date.month)
-            dateObject = DateDeliveryOne(r.commitment_date, r.effective_date, delta)
-            r.delivery_late = dateObject.delivery_in_time()
+            date_object = DateDeliveryOne(r.commitment_date, r.effective_date, delta)
+            r.delivery_late = date_object.delivery_in_time()
 
 
     @api.depends('delivery_late')

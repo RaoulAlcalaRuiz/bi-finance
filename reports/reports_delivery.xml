@@ -6,7 +6,7 @@
         name="bi_finance.delivery_in_time_report_template"
         file="bi_finance.delivery_in_time_report_template"
         report_type="qweb-html"
-        menu="True"
+        menu="False"
         groups="group_livraison,group_manager"
     />
 
