@@ -30,6 +30,9 @@ class CustomerSatisfactionProvider:
                 (self.MONTHS, [self._formated_all_percent(result_oqd),goal_achieved], self._formated_all_percent(result_accrued_oqd), self._formated_all_percent(goal))
                 ]
 
+    # def get_date_delivery(self):
+    #     return self._factory.get_date_otd()
+
     def null_value_futur(self,list):
         return DateDelivery(list, self._year).new_list
 

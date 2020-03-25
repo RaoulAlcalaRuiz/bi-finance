@@ -36,7 +36,7 @@ class Order(models.Model):
             delta = 0
             if r.commitment_date:
                 delta = self._get_day_before_delivering(r.commitment_date.year, r.commitment_date.month)
-            date_object = DateDeliveryOne(r.commitment_date, r.effective_date, delta)
+            date_object = DateDeliveryOne(r.commitment_date, self._get_effective_date(r.name), delta)
             r.delivery_late = date_object.delivery_in_time()
 
 
@@ -47,6 +47,31 @@ class Order(models.Model):
                 r.is_late = True
             else :
                 r.is_late = False
+
+    def _get_effective_date(self,name):
+        request=("select "+
+                    "(select max(date_done) "+
+                    "from sale_order ss "+
+                    "join stock_picking ssp on ssp.origin = ss.name  "+
+                    "where ss.name = o.name) as Effective_date "+
+                "From sale_order o "+
+                "Where o.name = '"+str(name)+"'"+
+                 "AND (select COUNT(ssp.state) " +
+                 "	from sale_order ss " +
+                 "	join stock_picking ssp on ssp.origin = ss.name " +
+                 "	where ss.name = o.name) " +
+                 "	= " +
+                 "	(select COUNT(ssp.state) " +
+                 "	from sale_order ss " +
+                 "	join stock_picking ssp on ssp.origin = ss.name " +
+                 "	where ss.name = o.name and ssp.state = 'done') ")
+
+        self.env.cr.execute(request)
+        result = self.env.cr.fetchone()
+        if result is not None:
+            return result[0]
+        else:
+            return None
 
     def _get_day_before_delivering(self,year, month):
         request=("select m.day_before_delivery "+

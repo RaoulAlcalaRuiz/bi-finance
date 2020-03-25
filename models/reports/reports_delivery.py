@@ -31,7 +31,7 @@ class ReportGoalEmployee(models.AbstractModel):
             'delivery_in_time': delivery_in_time,
             'delivery_in_time_formated': delivery_in_time_formated,
             'quality_delivery': quality_delivery,
-            'quality_delivery_formated': quality_delivery_formated
+            'quality_delivery_formated': quality_delivery_formated,
         }
         return docargs
 

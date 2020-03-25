@@ -25,6 +25,7 @@
                         <script src="https://code.highcharts.com/modules/export-data.js"></script>
                     </head>
                     <body>
+
                         <div class="header">
                             <div>
                                 <div class="div_logo">

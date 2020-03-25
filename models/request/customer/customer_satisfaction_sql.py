@@ -28,34 +28,61 @@ class CustomerSatisfactionSql:
         return self._odoo.env.cr.fetchall()
 
     # Revoi le nombre de livraison livré à temps
-    def get_count_month_delivery_in_time(self, time_delivery):
-        request = ("select COUNT(o.id) "+
-                    "From sale_order o "+
-                    "JOIN res_company c on c.id = o.company_id "+
-                    "WHERE TO_CHAR(o.commitment_date,'YYYY') = '" + str(self._year) + "' "+
-                    "AND CAST (TO_CHAR(o.commitment_date,'MM') AS INTEGER) = '" + str(self._month) + "' "+
-                    "AND o.state = 'sale' "+
-                    "AND c.id = '" + str(self._id_company) + "' "+
-                    "AND date_part('day', "+
-                    "	age( "+
-                    "		DATE(o.commitment_date), "+
-                    "		DATE( "+
-                    "			(select max(date_done) "+
-                    "			from sale_order ss "+
-                    "			join stock_picking ssp on ssp.origin = ss.name "+
-                    "			where ss.name = o.name) "+
-                    "		) "+
-                    "	) "+
-                    ") > INTEGER '" + str(time_delivery) + "' "+
-                    "AND (select COUNT(ssp.state) "+
-                    "	from sale_order ss "+
-                    "	join stock_picking ssp on ssp.origin = ss.name "+
-                    "	where ss.name = o.name) "+
-                    "	= "+
-                    "	(select COUNT(ssp.state) "+
-                    "	from sale_order ss "+
-                    "	join stock_picking ssp on ssp.origin = ss.name "+
-                    "	where ss.name = o.name and ssp.state = 'done')")
+    # def get_count_month_delivery_in_time(self, time_delivery):
+    #     request = ("select COUNT(o.id) "+
+    #                 "From sale_order o "+
+    #                 "JOIN res_company c on c.id = o.company_id "+
+    #                 "WHERE TO_CHAR(o.commitment_date,'YYYY') = '" + str(self._year) + "' "+
+    #                 "AND CAST (TO_CHAR(o.commitment_date,'MM') AS INTEGER) = '" + str(self._month) + "' "+
+    #                 "AND o.state = 'sale' "+
+    #                 "AND c.id = '" + str(self._id_company) + "' "+
+    #                 "AND date_part('day', "+
+    #                 "	age( "+
+    #                 "		DATE(o.commitment_date), "+
+    #                 "		DATE( "+
+    #                 "			(select max(date_done) "+
+    #                 "			from sale_order ss "+
+    #                 "			join stock_picking ssp on ssp.origin = ss.name "+
+    #                 "			where ss.name = o.name) "+
+    #                 "		) "+
+    #                 "	) "+
+    #                 ") > INTEGER '" + str(time_delivery) + "' "+
+    #                 "AND (select COUNT(ssp.state) "+
+    #                 "	from sale_order ss "+
+    #                 "	join stock_picking ssp on ssp.origin = ss.name "+
+    #                 "	where ss.name = o.name) "+
+    #                 "	= "+
+    #                 "	(select COUNT(ssp.state) "+
+    #                 "	from sale_order ss "+
+    #                 "	join stock_picking ssp on ssp.origin = ss.name "+
+    #                 "	where ss.name = o.name and ssp.state = 'done')")
+    #     self._odoo.env.cr.execute(request)
+    #     return self._odoo.env.cr.fetchall()
+
+    # Revoi la date effective et la date prévue des livraisons effectuées
+    def get_effective_commitment(self):
+        request = ("select "
+                   "	DATE((select max(date_done) "+
+                   "	from sale_order ss "+
+                   "	join stock_picking ssp on ssp.origin = ss.name "+
+                   "	where ss.name = o.name))  as Effective_date"+
+                   "    ,DATE(o.commitment_date) " +
+                   "From sale_order o " +
+                   "JOIN res_company c on c.id = o.company_id " +
+                   "WHERE TO_CHAR(o.commitment_date,'YYYY') = '" + str(self._year) + "' " +
+                   "AND CAST (TO_CHAR(o.commitment_date,'MM') AS INTEGER) = '" + str(self._month) + "' " +
+                   "AND o.state = 'sale' " +
+                   "AND c.id = '" + str(self._id_company) + "' " +
+                   "AND (select COUNT(ssp.state) " +
+                   "	from sale_order ss " +
+                   "	join stock_picking ssp on ssp.origin = ss.name " +
+                   "	where ss.name = o.name) " +
+                   "	= " +
+                   "	(select COUNT(ssp.state) " +
+                   "	from sale_order ss " +
+                   "	join stock_picking ssp on ssp.origin = ss.name " +
+                   "	where ss.name = o.name and ssp.state = 'done') "+
+                   "AND Effective_date is not NULL")
         self._odoo.env.cr.execute(request)
         return self._odoo.env.cr.fetchall()
 

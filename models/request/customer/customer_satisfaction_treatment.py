@@ -1,5 +1,6 @@
 from .customer_satisfaction_sql import CustomerSatisfactionSql
 from ....classes.result_interpretation import ResultInterpretationZero
+from ....classes.date_delivery import on_time_business_day_list
 
 class CustomerSatisfactionTreatment:
     def __init__(self,id_company,year,id_goal,odoo):
@@ -21,6 +22,7 @@ class CustomerSatisfactionTreatment:
         all_cumulative = 0
         for i in range(1, 13):
             month_result = self.month_result_otd(i)
+
             in_time_cumulative += month_result[0]
             all_cumulative += month_result[1]
             average_otd = self._average_delivery(month_result[0], month_result[1])
@@ -28,6 +30,19 @@ class CustomerSatisfactionTreatment:
             result_otd.append(average_otd)
             result_cumulative_otd.append(average_cumulative_otd)
         return [result_otd,result_cumulative_otd]
+
+    # def get_date_otd(self):
+    #     date_otd = []
+    #     for i in range(1, 13):
+    #         month_result = self.month_date_otd(i)
+    #         date_otd.append(month_result)
+    #     return date_otd
+    #
+    # def month_date_otd(self, month):
+    #     self.change_month(month)
+    #     time_delivery = self.interpretation(self._sql.get_time_delivery())
+    #     result_sql = self._sql.get_effective_commitment()
+    #     return on_time_business_day_list(result_sql,time_delivery)
 
     def month_goal_otd(self, month):
         self.change_month(month)
@@ -37,7 +52,9 @@ class CustomerSatisfactionTreatment:
     def month_result_otd(self,month):
         self.change_month(month)
         time_delivery = self.interpretation(self._sql.get_time_delivery())
-        in_time = self.interpretation(self._sql.get_count_month_delivery_in_time(time_delivery))
+        # in_time = self.interpretation(self._sql.get_count_month_delivery_in_time(time_delivery))
+        result_sql = self._sql.get_effective_commitment()
+        in_time = on_time_business_day_list(result_sql,time_delivery)
         all_delivery = self.interpretation(self._sql.get_count_month_delivery())
         return (in_time,all_delivery)
 

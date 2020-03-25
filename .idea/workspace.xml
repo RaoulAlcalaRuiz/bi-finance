@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="Stock report">
-      <change afterPath="$PROJECT_DIR$/models/reports/reports_ebitda.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/ebitda/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/ebitda/ebitda_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/ebitda/ebitda_sql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/request/ebitda/ebitda_treatment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reports/reports_ebitda.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/ebitda.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wizard/monthly_goal.py" afterDir="false" />
+    <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/AUTHORS.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/HISTORY.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/MANIFEST.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/README.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar/business_calendar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar/test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar/test/speed_comparison.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/business_calendar/test/test_business_calendar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/setup.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/business_calendar/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/result_interpretation.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/result_interpretation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/monthly_goal.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly_goal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/reports/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/date_delivery.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/date_delivery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reports/reports_delivery.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports/reports_delivery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_treatment.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/customer/customer_satisfaction_treatment.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/sale_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sale_order.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/yearly_goal.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/yearly_goal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/reports_delivery.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_delivery.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_employee.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports_stock.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_stock.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/monthly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/sale_order.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/sale_order.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/yearly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/yearly_goal.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,20 +57,21 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/library" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Document\Aquatic science\Odoo canevas\odoo\mymodules\bi_finance\library" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\static\description" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\static\src\img" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\request\customer" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\request\sale_order" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\reports" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\request" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\static\description" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\static\src\img" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\views" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Unittests for date_delivery_tests.DateDeliveryTest.test_compute_achievement_1">
@@ -338,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584620671356</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Ebitda report (goal), Filtre correction (OQD, OTD), Commitment_date correction">
+      <created>1585054181281</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1585054181281</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -369,7 +379,8 @@
     <MESSAGE value="Reorganization Employee Report" />
     <MESSAGE value="Reorganization delivery report" />
     <MESSAGE value="Stock report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stock report" />
+    <MESSAGE value="Ebitda report (goal), Filtre correction (OQD, OTD), Commitment_date correction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ebitda report (goal), Filtre correction (OQD, OTD), Commitment_date correction" />
   </component>
   <component name="WindowStateProjectService">
     <state x="172" y="265" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585044648283">
@@ -381,10 +392,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584363236735" />
-    <state x="411" y="22" width="836" height="791" key="CommitChangelistDialog2" timestamp="1584620768022">
+    <state x="411" y="22" width="836" height="791" key="CommitChangelistDialog2" timestamp="1585054176747">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="411" y="22" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584620768022" />
+    <state x="411" y="22" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585054176747" />
     <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584365161975" />
     <state x="208" y="223" key="FileChooserDialogImpl" timestamp="1585038172610">
       <screen x="0" y="0" width="1536" height="824" />
@@ -427,10 +438,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582730082521" />
-    <state x="148" y="206" key="Vcs.Push.Dialog.v2" timestamp="1584620805260">
+    <state x="148" y="206" key="Vcs.Push.Dialog.v2" timestamp="1585054199098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="148" y="206" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584620805260" />
+    <state x="148" y="206" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585054199098" />
     <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584365175722" />
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
       <screen x="0" y="0" width="1920" height="1040" />

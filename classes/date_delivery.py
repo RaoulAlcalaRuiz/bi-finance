@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-
+from ..library.business_calendar.business_calendar.business_calendar  import Calendar, MO, TU, WE, TH, FR
 
 def compute_achievement_list(reality, goal):
     achievement_list = []
@@ -32,6 +32,18 @@ def _value_null_in_futur( value, year, real_year, month, real_month):
     else:
         return value
 
+# [(effective,commitment),...]
+def on_time_business_day_list(list, time_delivery):
+    count = 0
+    for delivery in list:
+        if on_time_business_day(delivery[0],delivery[1],time_delivery):
+            count = 1 + count
+    return count
+
+def on_time_business_day (effective, commitment,time_delivery):
+    cal = Calendar(workdays=[MO, TU, WE, TH, FR])
+    return cal.busdaycount(effective, commitment) >= time_delivery
+
 class DateDelivery:
     def __init__(self, list, year):
         self._list = list
@@ -62,15 +74,15 @@ class DateDeliveryOne:
     def delivery_in_time(self):
         if self._commitment_date:
             commitment_date = self._commitment_date
-            commitment_date = commitment_date - timedelta(days=self._delta)
 
             if self._effective_date:
                 effective_date = self._effective_date
                 effective_date = datetime(effective_date.year, effective_date.month, effective_date.day, 0, 0)
-                if commitment_date < effective_date:
-                    return -1
-                else:
+                commitment_date = datetime(commitment_date.year, commitment_date.month, commitment_date.day, 0, 0)
+                if on_time_business_day(effective_date,commitment_date,self._delta):
                     return 1
+                else:
+                    return -1
             else:
                 today = datetime.today()
                 if commitment_date < today:
