@@ -14,12 +14,16 @@ class SaleOrderProvider:
     def annual_sales(self):
         sales = self._factory.annual_sales()
         goal = self._factory.annual_sales_goal()
+        sales_cat = self._factory.annual_sales_cat()
+        goal_cat = self._factory.annual_sales_goal_cat()
         average = self.average(sales[0],goal[0])
-        return [self.MONTHS,
-                sales[0],
-                goal[0],
-                average,
-                [sales[1],goal[1],self.average_year(sales[1],goal[1])]]
+        return  [self.MONTHS,
+                 sales[0],
+                 goal[0],
+                 average,
+                 [sales[1], goal[1], self.average_year(sales[1], goal[1])],
+                 goal_cat,
+                 sales_cat]
 
     def annual_goal_employee(self):
         return self._factory.annual_sales_goal_employee()

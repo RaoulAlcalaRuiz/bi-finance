@@ -53,6 +53,14 @@
                             <field name="commercial_id"/>
                             <field name="goal"/>
                         </group>
+                        <group>
+                            <field name="product_cat_ids">
+                                <tree>
+                                    <field name="cat_product_id"/>
+                                    <field name="goal"/>
+                                </tree>
+                            </field>
+                        </group>
                     </group>
                 </sheet>
             </form>

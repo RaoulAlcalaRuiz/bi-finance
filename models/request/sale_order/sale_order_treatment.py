@@ -1,5 +1,6 @@
 from ....classes.treatment_factory import TreatmentFactory
 from ....classes.result_interpretation import ResultInterpretationZero
+from ....classes.color_picker import ColorPicker
 from ....models.request.sale_order.sale_order_sql import SaleOrderSql
 
 
@@ -10,27 +11,55 @@ class SaleOrderTreatment :
         self._user_id = user_id
         self._sql = SaleOrderSql(year, odoo)
         self._treatment = TreatmentFactory(treatment).get_treatment()
+        self._categories = self._get_all_cat()
+        self._color = ColorPicker()
 
     # Annual request
     def annual_sales(self):
         annual_sales = []
         for i in range(1, 13):
-            month_result = self.month_sales(i)
+            month_result = self.month_sales(i, None)
             annual_sales.append(month_result)
         treatment = self._treatment.treatment(annual_sales, "real")
         total = self._treatment.sum(treatment)
 
         return [treatment,total]
 
+    def annual_sales_cat(self):
+        cats_sales = []
+        j = 0
+        for cat in self._categories:
+            annual_sales = []
+            for i in range(1, 13):
+                month_result = self.month_sales(i, cat[0])
+                annual_sales.append(month_result)
+            treatment = self._treatment.treatment(annual_sales, "real")
+            cats_sales.append((cat[1], self._color.colors_dark(j) ,treatment))
+            j += 1
+        return cats_sales
+
     def annual_sales_goal(self):
         annual_sales_goal = []
         for i in range(1, 13):
-            month_result = self.month_sales_goal(i)
+            month_result = self.month_sales_goal(i,None)
             annual_sales_goal.append(month_result)
         treatment = self._treatment.treatment(annual_sales_goal, "goal")
         total = self._treatment.sum(annual_sales_goal)
 
         return [treatment,total]
+
+    def annual_sales_goal_cat(self):
+        cats_goal = []
+        j = 0
+        for cat in self._categories:
+            annual_sales_goal = []
+            for i in range(1, 13):
+                month_result = self.month_sales_goal(i,cat[0])
+                annual_sales_goal.append(month_result)
+            treatment = self._treatment.treatment(annual_sales_goal, "goal")
+            cats_goal.append((cat[1], self._color.colors(j),treatment))
+            j += 1
+        return cats_goal
 
     def annual_forecast(self):
         annual_forecast = []
@@ -75,14 +104,14 @@ class SaleOrderTreatment :
 
 
     # Month request
-    def month_sales_goal(self, month):
+    def month_sales_goal(self, month,cat):
         self.change_month(month)
-        result_sql = self._sql.get_goal_sale_oders(self._user_id)
-        return self.interpretation(result_sql)
+        result = self._sql.get_goal_sale_oders(self._user_id, cat)
+        return self.interpretation(result)
 
-    def month_sales(self, month):
+    def month_sales(self, month,cat):
         self.change_month(self.format_month(month))
-        result_sql = self._sql.get_sale_oders(self._user_id)
+        result_sql = self._sql.get_sale_oders(self._user_id,cat)
         return self.interpretation(result_sql)
 
     def month_forecast(self, month):
@@ -101,3 +130,5 @@ class SaleOrderTreatment :
     def format_month(self,month):
         return "{:02d}".format(month)
 
+    def _get_all_cat(self):
+        return self._sql.get_all_categories()

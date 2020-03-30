@@ -7,14 +7,19 @@ class SaleOrderSql:
     def set_month(self, month):
         self._month = str(month)
 
-    def get_sale_oders(self,user_id):
-        condition = ""
+    def get_sale_oders(self,user_id,cat):
+        user_condition = ""
+        cat_condition = ""
         if str(user_id) != "all":
-            condition = "And s.user_id = '" + str(user_id) + "'"
-
-        request = ("select SUM(s.amount_untaxed) "+
+            user_condition = "And s.user_id = '" + str(user_id) + "'"
+        if cat:
+            cat_condition = "and pt.categ_id = '"+str(cat)+"' "
+        request = ("select SUM(sl.price_subtotal) "+
                     "From sale_order s "+
-                    "Join account_move a on a.invoice_origin = s.name "+
+                    "Join account_move a on a.invoice_origin = s.name "
+                    "Join sale_order_line sl on s.id = sl.order_id "+
+                    "Join product_product pp on pp.id = sl.product_id "+
+                    "Join product_template pt on pt.id = pp.product_tmpl_id "+
                     "WHERE (select TO_CHAR(max(date_done), 'YYYY MM') "+
                     "		from sale_order ss "+
                     "		join stock_picking ssp on ssp.origin = ss.name "+
@@ -29,26 +34,43 @@ class SaleOrderSql:
                     "	join stock_picking ssp on ssp.origin = ss.name "+
                     "	where ss.name = s.name and ssp.state = 'done') "+
                     "AND s.state = 'sale' "+
-                    condition +
+                    user_condition +
+                    cat_condition +
                     "And a.state = 'posted' "+
                     "group by s.state")
         self._odoo.env.cr.execute(request)
         return self._odoo.env.cr.fetchall()
 
-    def get_goal_sale_oders(self,user_id):
-        condition = ""
+    def get_goal_sale_oders(self,user_id,cat_id):
+        user_condition = ""
+        cat_condition = ""
         if str(user_id) != "all":
-            condition = "AND u.id = '" + str(user_id) + "' "
-        request = ("select SUM(e.goal), y.year AS Year, m.month AS Month " +
-                   "From bi_finance_monthly_goal_employee e " +
+            user_condition = "AND u.id = '" + str(user_id) + "' "
+        if cat_id :
+            cat_condition = "AND pc.cat_product_id = '" + str(cat_id) + "' "
+        request = ("select SUM(pc.goal), y.year AS Year, m.month AS Month " +
+                   "From bi_finance_monthly_goal_employee e "
+                   "JOIN bi_finance_product_cat_ca pc on pc.monthly_goal_employee_id = e.id "+
+                   cat_condition +
                    "JOIN bi_finance_monthly_goal m on m.id = e.monthly_goal_id " +
                    "JOIN bi_finance_yearly_goal y on y.id = m.yearly_goal_id " +
                    "JOIN res_users u on u.id = e.commercial_id " +
                    "JOIN res_partner p on p.id = u.partner_id " +
                    "WHERE y.year = '" + self._year + "' " +
                    "AND m.month = '" + self._month + "' " +
-                    condition+
+                    user_condition+
                    "GROUP BY Year,Month")
+        self._odoo.env.cr.execute(request)
+        return self._odoo.env.cr.fetchall()
+
+    def get_all_categories(self):
+        request = ("select DISTINCT pc.cat_product_id , cat.name "+
+                    "From bi_finance_monthly_goal_employee e "+
+                    "JOIN bi_finance_monthly_goal m on m.id = e.monthly_goal_id "+
+                    "JOIN bi_finance_product_cat_ca pc on pc.monthly_goal_employee_id = e.id  "+
+                    "JOIN bi_finance_yearly_goal y on y.id = m.yearly_goal_id  "+
+                    "JOIN product_category cat on cat.id = pc.cat_product_id "+
+                    "WHERE y.year = '" + self._year + "' ")
         self._odoo.env.cr.execute(request)
         return self._odoo.env.cr.fetchall()
 

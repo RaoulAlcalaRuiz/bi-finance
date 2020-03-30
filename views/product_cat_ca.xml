@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!--==========View and Action objectif annuel===========-->
+    <record model="ir.actions.act_window" id="product_cat_ca_list">
+        <field name="name">Objectif Catégories</field>
+        <field name="res_model">bi_finance.product_cat_ca</field>
+        <field name="view_mode">form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Créez votre premier objectif mensuel pour un employé.
+            </p>
+        </field>
+    </record>
+
+    <!--Formulaire d'ajout ou de modification d'un objectif annuel-->
+    <record model="ir.ui.view" id="product_cat_ca_form_view">
+        <field name="name">bi_finance.product_cat_ca.form</field>
+        <field name="model">bi_finance.product_cat_ca</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group colspan="4">
+                        <group colspan="2" col="2">
+                            <field name="cat_product_id"/>
+                        </group>
+                        <group colspan="2" col="2">
+                            <field name="goal"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

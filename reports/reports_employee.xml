@@ -56,7 +56,7 @@
                                                 <tr>
                                                     <th t-esc="annual_sales_cumulative[0][index]"></th>
                                                     <td t-if="annual_sales_cumulative[1][index] != 'null'" t-esc="annual_sales_cumulative[1][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
-                                                    <td t-else="" t-esc="zero_value" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                    <td t-else=""> - </td>
                                                     <td t-esc="annual_sales_cumulative[2][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                                     <t t-if="annual_sales_cumulative[3][index][1]"><td class="average-true"><t t-esc="annual_sales_cumulative[3][index][0]"></t></td></t>
                                                     <t t-else=""><td class="average-false"><t t-esc="annual_sales_cumulative[3][index][0]"></t></td></t>
@@ -95,7 +95,7 @@
                                             <tr>
                                                 <th t-esc="annual_sales[0][index]"></th>
                                                 <td t-if="annual_sales[1][index] != 'null'" t-esc="annual_sales[1][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
-                                                <td t-else="" t-esc="zero_value" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
+                                                <td t-else=""> - </td>
                                                 <td t-esc="annual_sales[2][index]" t-options="{'widget': 'monetary', 'display_currency':currency_id}"></td>
                                                 <t t-if="annual_sales[3][index][1]"><td class="average-true"><t t-esc="annual_sales[3][index][0]"></t></td></t>
                                                 <t t-else=""><td class="average-false"><t t-esc="annual_sales[3][index][0]"></t></td></t>
@@ -177,19 +177,6 @@
 
 
                         <!--Data hidden for graph-->
-                        <table id="cumulative-annual-sales" style="visibility:hidden;  position: absolute;">
-                            <thead><tr><th></th><th>Réalité</th><th>Objectif</th></tr></thead>
-                            <tbody>
-                                 <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
-                                    <tr>
-                                        <th t-esc="annual_sales_cumulative[0][index]"></th>
-                                        <td t-esc="annual_sales_cumulative[1][index]"></td>
-                                        <td t-esc="annual_sales_cumulative[2][index]"></td>
-                                    </tr>
-                                 </t>
-                            </tbody>
-                        </table>
-
                         <table id="annual-sales" style="visibility:hidden;  position: absolute;">
                                 <thead><tr><th></th><th>Réalité</th><th>Objectif</th></tr></thead>
                                 <tbody>
@@ -215,6 +202,40 @@
                             </tbody>
                         </table>
                     </body>
+                                         <div id="ca_annuals"  style="visibility:hidden;  position: absolute;">
+                            [
+                                <t t-foreach="annual_sales_cumulative[5]" t-as="brand">
+                                    {
+                                        "name":"<t t-esc="brand[0]"></t> - obj.",
+                                        "color":"<t t-esc="brand[1]"></t>",
+                                        "data":
+                                                [
+                                                    <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                                        <t t-esc="brand[2][index]"></t>
+                                                        <t t-if="index != 11">,</t>
+                                                    </t>
+                                                ],
+                                        "type":"area"
+                                    }
+                                    <t t-if="annual_sales_cumulative[5][len(annual_sales_cumulative[5])-1] != brand">,</t>
+                                </t>,
+                                <t t-foreach="annual_sales_cumulative[6]" t-as="brand">
+                                    {
+                                        "name":"<t t-esc="brand[0]"></t>",
+                                        "color":"<t t-esc="brand[1]"></t>",
+                                        "data":
+                                                [
+                                                    <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                                        <t t-esc="brand[2][index]"></t>
+                                                        <t t-if="index != 11">,</t>
+                                                    </t>
+                                                ],
+                                        "type":"column"
+                                    }
+                                    <t t-if="annual_sales_cumulative[6][len(annual_sales_cumulative[6])-1] != brand">,</t>
+                                </t>
+                            ]
+                        </div>
                 <!--========ALL import JS sources=======-->
                 <script type="text/javascript" src="/bi_finance/static/js/annualSalesEmployee.js"/>
             </t>

@@ -43,6 +43,7 @@
         'views/monthly_goal_employee.xml',
         'views/menu.xml',
         'views/sale_order.xml',
+        'views/product_cat_ca.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

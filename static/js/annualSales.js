@@ -1,8 +1,4 @@
-
 Highcharts.chart('area-annual-sales', {
-    data: {
-        table: 'annual-sales-cumulative'
-    },
     chart: {
         type: 'area'
     },
@@ -33,15 +29,21 @@ Highcharts.chart('area-annual-sales', {
                 }
             }
         }
+        ,
+        column: {
+            stacking: 'normal',
+        },
+        area: {
+            stacking: 'normal',
+        }
     },
-    series: [{
-        name: 'Résultats',
-        color: '#2748ab'},
-        {
-        name: 'Objectif',
-        color: '#5e8fbd'
-        }]
+    xAxis: {
+        categories: ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    },
+    series:
+    JSON.parse($("#ca_annuals").html())
 });
+
 
 Highcharts.chart('bar-annual-sales', {
     data: {

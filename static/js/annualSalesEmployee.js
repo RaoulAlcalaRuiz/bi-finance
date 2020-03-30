@@ -1,12 +1,9 @@
 Highcharts.chart('area-annual-sales', {
-    data: {
-        table: 'cumulative-annual-sales'
-    },
     chart: {
         type: 'area'
     },
     title: {
-        text: 'Objectif mensuel'
+        text: 'Chiffre d\'affaires Réalité/Objectif'
     },
     yAxis: {
         labels: {
@@ -18,14 +15,35 @@ Highcharts.chart('area-annual-sales', {
     tooltip: {
         pointFormat: '{series.name} \: <b>{point.y:,.0f}</b>'
     },
-    series: [{
-        name: 'Résultats',
-        color: '#2748ab'},
-        {
-        name: 'Objectif',
-        color: '#5e8fbd'
-        }]
+    plotOptions: {
+        area: {
+            pointStart: 1,
+            marker: {
+                enabled: false,
+                symbol: 'circle',
+                radius: 2,
+                states: {
+                    hover: {
+                        enabled: true
+                    }
+                }
+            }
+        }
+        ,
+        column: {
+            stacking: 'normal',
+        },
+        area: {
+            stacking: 'normal',
+        }
+    },
+    xAxis: {
+        categories: ["1","2","3","4","5","6","7","8","9","10","11","12"]
+    },
+    series:
+    JSON.parse($("#ca_annuals").html())
 });
+
 
 Highcharts.chart('bar-annual-sales', {
     data: {
