@@ -36,7 +36,6 @@
                         </div>
 
                         <div class="page">
-
                             <figure class="highcharts-figure mt-5">
                                 <br/>
                                 <h3 class="text-center ">Stock Mensuel</h3>
@@ -58,7 +57,40 @@
                                 </table>
                             </figure>
                         </div>
-
+                        <div class="page">
+                            <figure class="highcharts-figure mt-5">
+                                <br/>
+                                <h3 class="text-center ">Stock Mensuel</h3>
+                                <div id="stock_per_cat" style="width:800px; height:600px; margin:auto auto;"></div>
+                                <p style="page-break-after:always;">   </p>
+                                <h3 class="text-center ">Stock Mensuel</h3>
+<!--                                <div class="d-flex justify-content-around">-->
+<!--                                    <table class="datatable">-->
+<!--                                        <thead><tr><th>mois</th></tr></thead>-->
+<!--                                        <tbody>-->
+<!--                                             <t t-foreach="stock_cat[0]" t-as="month">-->
+<!--                                                <tr>-->
+<!--                                                    <th t-esc="month"></th>-->
+<!--                                                </tr>-->
+<!--                                             </t>-->
+<!--                                        </tbody>-->
+<!--                                    </table>-->
+<!--                                    <t t-foreach="stock_cat[1]" t-as="brand">-->
+<!--                                            <table class="datatable">-->
+<!--                                                <thead><tr><th><t t-esc="brand[0]"/></th><th><t t-esc="brand[0]"/> - obj.</th></tr></thead>-->
+<!--                                                <tbody>-->
+<!--                                                <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index_value">-->
+<!--                                                    <tr>-->
+<!--                                                        <th t-esc="brand[1][index_value]"></th>-->
+<!--                                                        <th t-esc="brand[2][index_value]"></th>-->
+<!--                                                    </tr>-->
+<!--                                                </t>-->
+<!--                                                </tbody>-->
+<!--                                            </table>-->
+<!--                                    </t>-->
+<!--                                </div>-->
+                            </figure>
+                        </div>
                         <br/>
                         <table id="stock-data" style="visibility:hidden;  position: absolute;">
                             <thead><tr><th></th><th>stock - actuel</th><th>stock - objectif</th></tr></thead>
@@ -73,7 +105,42 @@
                             </tbody>
                         </table>
                     </body>
+                        <div id="stock_per_cat_data" style="visibility:hidden;  position: absolute;">
+                            [
+                                <t t-foreach="stock_cat[1]" t-as="brand">
+                                    {
+                                        "name":"<t t-esc="brand[0]"></t>",
+                                        "color":"<t t-esc="brand[1]"></t>",
+                                        "data":
+                                                [
+                                                    <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                                        <t t-esc="brand[2][index]"></t>
+                                                        <t t-if="index != 11">,</t>
+                                                    </t>
+                                                ],
+                                        "type":"column"
+                                    }
+                                    <t t-if="stock_cat[1][len(stock_cat[1])-1] != brand">,</t>
+                                </t>,
+                                <t t-foreach="stock_cat[1]" t-as="brand">
+                                    {
+                                        "name":"<t t-esc="brand[0]"></t> - obj.",
+                                        "color":"<t t-esc="brand[3]"></t>",
+                                        "data":
+                                                [
+                                                    <t t-foreach="[0,1,2,3,4,5,6,7,8,9,10,11]" t-as="index">
+                                                        <t t-esc="brand[4][index]"></t>
+                                                        <t t-if="index != 11">,</t>
+                                                    </t>
+                                                ],
+                                        "type":"spline"
+                                    }
+                                    <t t-if="stock_cat[1][len(stock_cat[1])-1] != brand">,</t>
+                                </t>
+                            ]
+                        </div>
                 <!--========ALL import JS sources=======-->
+                <script type="text/javascript" src=" http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js "></script>
                 <script type="text/javascript" src="/bi_finance/static/js/stock.js"/>
             </t>
         </t>

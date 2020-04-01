@@ -13,10 +13,12 @@ class ReportStock(models.AbstractModel):
         id_company = self._get_id_company(docids)
 
         provider = StockProvider(year, id_company, self)
-        stock =provider.stock()
+        stock = provider.stock()
 
+        stock_cat = provider.stock_cat()
         docargs = {
             'stock': stock,
+            'stock_cat': stock_cat,
             'year': year,
             'currency_id': currency_id,
             'zero_value': 0,

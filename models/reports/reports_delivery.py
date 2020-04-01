@@ -23,6 +23,7 @@ class ReportGoalEmployee(models.AbstractModel):
         quality_delivery = result[0]
         quality_delivery_formated = result[1]
 
+        
         docargs = {
             'year': year,
             'currency_id': currency_id,

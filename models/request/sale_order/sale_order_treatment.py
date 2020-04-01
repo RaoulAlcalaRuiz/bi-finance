@@ -11,7 +11,7 @@ class SaleOrderTreatment :
         self._user_id = user_id
         self._sql = SaleOrderSql(year, odoo)
         self._treatment = TreatmentFactory(treatment).get_treatment()
-        self._categories = self._get_all_cat()
+        self._categories = self.get_all_cat()
         self._color = ColorPicker()
 
     # Annual request
@@ -130,5 +130,5 @@ class SaleOrderTreatment :
     def format_month(self,month):
         return "{:02d}".format(month)
 
-    def _get_all_cat(self):
+    def get_all_cat(self):
         return self._sql.get_all_categories()

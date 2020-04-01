@@ -15,8 +15,8 @@ class monthlyGoalEmployee(models.Model):
      commercial_id = fields.Many2one('res.users',
         ondelete='cascade', string="Commercial", index=True,required=True)
 
-     product_cat_ids = fields.One2many(
-          'bi_finance.product_cat_ca', 'monthly_goal_employee_id', string="Catégories")
+     brand_goal_ids = fields.One2many(
+          'bi_finance.brand_goal', 'monthly_goal_employee_id', string="Catégories")
 
      @api.onchange('commercial_id',' monthly_goal_id')
      def _compute_name(self):
@@ -39,11 +39,11 @@ class monthlyGoalEmployee(models.Model):
                          mois=record.monthly_goal_id.month,
                          annee=record.monthly_goal_id.yearly_goal_id.year)
 
-     @api.depends('goal', 'product_cat_ids')
+     @api.depends('goal', 'brand_goal_ids')
      def _compute_goal(self):
           for r in self:
-               if 0 == len(r.product_cat_ids):
+               if 0 == len(r.brand_goal_ids):
                     r.goal = 0
                else:
-                    for m in r.product_cat_ids:
+                    for m in r.brand_goal_ids:
                          r.goal += m.goal

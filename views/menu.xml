@@ -34,4 +34,12 @@
 
     <menuitem id="delivery_in_time" name="Livraison" parent="satisfaction_bi_menu"
         action="yearly_goal_list_delivery_action"/>
+
+    <!--==========Parametrage==========-->
+    <menuitem id="param_bi_menu" name="Paramètre" parent="main_bi_finance_menu"
+        groups="group_manager"/>
+
+    <menuitem id="marque_bi_menu" name="Marque" parent="param_bi_menu"
+        action="product_brand_list"/>
+
 </odoo>

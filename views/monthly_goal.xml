@@ -72,8 +72,13 @@
                                 </group>
                             </page>
                             <page string="Stock">
-                                <group colspan="2" col="2">
-                                    <field name="stock" class="mb-3"/>
+                                <group colspan="4">
+                                    <field name="brand_goal_stock_ids">
+                                        <tree>
+                                            <field name="brand_id"/>
+                                            <field name="goal"/>
+                                        </tree>
+                                    </field>
                                 </group>
                             </page>
                             <page string="EBITDA">

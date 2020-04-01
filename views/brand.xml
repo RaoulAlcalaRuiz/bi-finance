@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--==========View and Action Brand===========-->
+    <record model="ir.actions.act_window" id="product_brand_list">
+        <field name="name">Association Marque/Catégories</field>
+        <field name="res_model">bi_finance.brand</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Créez votre première association Marque/Catégorie.
+            </p>
+        </field>
+    </record>
+
+    <!--Tree view Brand-->
+    <record model="ir.ui.view" id="brand_tree_view">
+        <field name="name">bi_finance.brand.tree</field>
+        <field name="model">bi_finance.brand</field>
+        <field name="arch" type="xml">
+            <tree string="Brand Tree">
+                <field name="name_brand"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Formulaire d'ajout ou de modification Brand-->
+    <record model="ir.ui.view" id="brand_form_view">
+        <field name="name">bi_finance.brand.form</field>
+        <field name="model">bi_finance.brand</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group colspan="4">
+                        <group colspan="2" col="2">
+                            <field name="name_brand"/>
+                        </group>
+                        <group colspan="2" col="2">
+                            <field name="cat_product_ids">
+                                <tree>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

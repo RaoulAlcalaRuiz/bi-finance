@@ -1,12 +1,12 @@
 from odoo import models, fields, api, exceptions
 
-class ProductCatCa(models.Model):
-    _name = 'bi_finance.product_cat_ca'
-    _description = 'Objectif sur catégorie'
+class BrandGoal(models.Model):
+    _name = 'bi_finance.brand_goal'
+    _description = 'Objectif sur marque'
 
 
-    cat_product_id = fields.Many2one('product.category',
-                                     ondelete='cascade', string="Catégorie", default=1, required=True)
+    brand_id = fields.Many2one('bi_finance.brand',
+                                     ondelete='cascade', string="Marque", default=1, required=True)
 
     monthly_goal_employee_id = fields.Many2one('bi_finance.monthly_goal_employee',
                                      ondelete='cascade')

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
         <!--==========View and Action objectif annuel===========-->
-    <record model="ir.actions.act_window" id="product_cat_ca_list">
+    <record model="ir.actions.act_window" id="brand_goal_stock_list">
         <field name="name">Objectif Catégories</field>
-        <field name="res_model">bi_finance.product_cat_ca</field>
+        <field name="res_model">bi_finance.brand_goal_stock</field>
         <field name="view_mode">form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -13,15 +13,15 @@
     </record>
 
     <!--Formulaire d'ajout ou de modification d'un objectif annuel-->
-    <record model="ir.ui.view" id="product_cat_ca_form_view">
-        <field name="name">bi_finance.product_cat_ca.form</field>
-        <field name="model">bi_finance.product_cat_ca</field>
+    <record model="ir.ui.view" id="brand_goal_stock_form_view">
+        <field name="name">bi_finance.brand_goal_stock.form</field>
+        <field name="model">bi_finance.brand_goal_stock</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group colspan="4">
                         <group colspan="2" col="2">
-                            <field name="cat_product_id"/>
+                            <field name="brand_id"/>
                         </group>
                         <group colspan="2" col="2">
                             <field name="goal"/>

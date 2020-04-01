@@ -2,22 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c989bb6-e69a-4a63-8915-e29407f24ea3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/color_picker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/product_cat_ca.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/product_cat_ca.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/brand.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/brand_goal_stock.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/product_category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/ratio_stock_ca/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/request/ratio_stock_ca/ratio_stock_ca.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/brand.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/brand_goal_stock.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/product_category.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/monthly_goal.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly_goal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/monthly_goal_employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/monthly_goal_employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/request/sale_order/sale_order_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order/sale_order_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/product_cat_ca.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/brand_goal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reports/reports_delivery.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports/reports_delivery.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reports/reports_stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reports/reports_stock.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/request/sale_order/sale_order_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order/sale_order_sql.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/request/sale_order/sale_order_treatment.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/sale_order/sale_order_treatment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/reports_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_employee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/stock/stock_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/stock/stock_provider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/stock/stock_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/stock/stock_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/request/stock/stock_treatment.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/request/stock/stock_treatment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/sale_order.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/sale_order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/reports_stock.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/reports_stock.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/annualSales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSales.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/annualSalesEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/stock.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/stock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/monthly_goal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/monthly_goal_employee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/monthly_goal_employee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/product_cat_ca.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/brand_goal.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,18 +64,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Document\Aquatic science\Odoo canevas\odoo\mymodules\bi_finance\library" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\static\description" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\static\src\img" />
+      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Document\Aquatic science\Odoo canevas\odoo\mymodules\bi_finance\models" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\request\customer" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\request\sale_order" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\reports" />
       <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\models\request" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Document\Aquatic science\Odoo canevas\odoo\mymodules\bi_finance\library" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo canevas\odoo\mymodules\bi_finance\static\description" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\static\src\img" />
-      <recent name="C:\Users\alcal\Documents\Raoul Alcala Ruiz\Odoo 3\odoo\mymodules\bi_finance\views" />
     </key>
   </component>
   <component name="RunManager" selected="Python tests.Unittests for date_delivery_tests.DateDeliveryTest.test_compute_achievement_1">
@@ -346,14 +359,20 @@
       <option name="project" value="LOCAL" />
       <updated>1585143831527</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Add Brand separation in CA">
+      <created>1585557278433</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1585557278433</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Get id of employee in a global goal" />
     <MESSAGE value="Request SQL (get All months, get All employees, get All sale_orders)" />
     <MESSAGE value="Request SQL (Get goal annual sales, get real annual sales)" />
     <MESSAGE value="data in JSON format on HTML Qweb report &#10;Get data with js and parse" />
@@ -378,7 +397,8 @@
     <MESSAGE value="Stock report" />
     <MESSAGE value="Ebitda report (goal), Filtre correction (OQD, OTD), Commitment_date correction" />
     <MESSAGE value="Business Day Correction OTD" />
-    <option name="LAST_COMMIT_MESSAGE" value="Business Day Correction OTD" />
+    <MESSAGE value="Add Brand separation in CA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Brand separation in CA" />
   </component>
   <component name="WindowStateProjectService">
     <state x="503" y="72" key="#Unittests_for_date_delivery_tests.DateDeliveryTest.test_compute_achievement_1" timestamp="1585315547718">
@@ -390,19 +410,20 @@
     </state>
     <state x="172" y="265" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1585299455519" />
     <state x="215" y="334" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1583237566536" />
-    <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584363236735">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="168" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585659542056">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="168" y="217" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585659542056" />
     <state x="210" y="274" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584363236735" />
-    <state x="411" y="22" width="836" height="791" key="CommitChangelistDialog2" timestamp="1585143829000">
+    <state x="411" y="22" width="836" height="791" key="CommitChangelistDialog2" timestamp="1585557275418">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="411" y="22" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585143829000" />
+    <state x="411" y="22" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585557275418" />
     <state x="514" y="117" width="836" height="791" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584365161975" />
-    <state x="208" y="223" key="FileChooserDialogImpl" timestamp="1585302403747">
+    <state x="208" y="223" key="FileChooserDialogImpl" timestamp="1585659162289">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="208" y="223" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585302403747" />
+    <state x="208" y="223" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585659162289" />
     <state x="260" y="282" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582802830560" />
     <state width="1899" height="197" key="GridCell.Tab.0.bottom" timestamp="1582812579726">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -440,10 +461,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1582730082521" />
-    <state x="148" y="206" key="Vcs.Push.Dialog.v2" timestamp="1585143838677">
+    <state x="148" y="206" key="Vcs.Push.Dialog.v2" timestamp="1585557281571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="148" y="206" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585143838677" />
+    <state x="148" y="206" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585557281571" />
     <state x="185" y="260" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584365175722" />
     <state x="626" y="193" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582187707999">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -469,6 +490,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="953" y="0" width="974" height="1047" key="dock-window-5/0.0.1920.1040@0.0.1920.1040" timestamp="1582557748969" />
+    <state x="474" y="168" width="588" height="488" key="find.popup" timestamp="1585726215767">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="474" y="168" width="588" height="488" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1585726215767" />
     <state x="258" y="328" key="git4idea.merge.GitPullDialog" timestamp="1583155482692">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

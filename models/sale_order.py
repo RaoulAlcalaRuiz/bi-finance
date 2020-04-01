@@ -11,7 +11,7 @@ class Order(models.Model):
                                               'sent': [('readonly', False)],
                                               'sale': [('readonly', False)]}
                                       )
-
+    effective_date = fields.Date('Effective Date')
     justification_for_delay = fields.Char(
         string="Justification de retard",
         help="Justification de retard. Peut être complété uniquement si la livraison est en retard." )
